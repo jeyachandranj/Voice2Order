@@ -85,3 +85,56 @@
   margin-top: 20px;
   color: #777;
 }
+
+/* Container for dropdown */
+.dropdown {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 1000;
+  margin-top: 5px; /* Adjust space between table cell and dropdown */
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+/* List styling for the dropdown */
+.dropdown ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+/* List items styling */
+.dropdown li {
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease, padding-left 0.2s ease;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+/* Hover effect for dropdown items */
+.dropdown li:hover {
+  background-color: #f7f7f7;
+  padding-left: 15px;
+}
+
+/* Table cell styling */
+.product-name-cell {
+  cursor: pointer;
+  padding: 12px 15px;
+  font-size: 16px;
+  text-align: left;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.product-name-cell:hover {
+  background-color: #f0f0f0;
+}

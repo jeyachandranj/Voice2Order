@@ -1,0 +1,3950 @@
+[
+  {
+    "name": "PEARL MILLET POHA (KAMBU AVAL) - 250GM",
+    "price": 999
+  },
+  {
+    "name": "WHEAT POHA (KOTHUMAI AVAL) - 250GM",
+    "price": 451
+  },
+  {
+    "name": "GREEN GRAM POHA (PAASI PAYIRU AVAL) - 250GM",
+    "price": 567
+  },
+  {
+    "name": " RAGI POHA (KELVARAGU AVAL) - 250GM",
+    "price": 210
+  },
+  {
+    "name": "KODO MILLET POHA (VARAGU AVAL) - 250GM",
+    "price": 212
+  },
+  {
+    "name": "FOXTAIL MILLET POHA (THINAI AVAL) - 250GM",
+    "price": 413
+  },
+  {
+    "name": "MIXED FLAKES (RAGI,FOXTAIL,LITTLE) - 250GM",
+    "price": 987
+  },
+  {
+    "name": "CORN FLAKES  (SOLAM AVAL) - 200GM",
+    "price": 935
+  },
+  {
+    "name": "BARNYARD POHA (KUTHIRAIVAALI  AVAL) - 250GM",
+    "price": 371
+  },
+  {
+    "name": "MIXED FLAKES (RAGI,PEARL,SORGHUM) - 250GM",
+    "price": 137
+  },
+  {
+    "name": "HORSEGRAM FLAKES  (KOLLU AVAL) -  250GM",
+    "price": 746
+  },
+  {
+    "name": "RICE POHA (THOOYAMALLI AVAL) - 250GM",
+    "price": 956
+  },
+  {
+    "name": "QUINOA  POHA (SEEMAI THINAI AVAL) - 250GM",
+    "price": 698
+  },
+  {
+    "name": "RED CHOLA POHA (SIVAPPU CHOLA  AVAL) - 250GM",
+    "price": 479
+  },
+  {
+    "name": "LITTLE MILLET POHA  (SAAMAI  AVAL) - 250GM",
+    "price": 417
+  },
+  {
+    "name": "OATS  - 200GM",
+    "price": 433
+  },
+  {
+    "name": "BARLEY FLAKES (VAAL KOTHUMAI AVAL) - 250GM",
+    "price": 972
+  },
+  {
+    "name": " UNPOLISHED (KAIKUTHAL) RICE AVAL  -  250GM",
+    "price": 909
+  },
+  {
+    "name": "KARUPU KAVUNI AVAL - 250GM",
+    "price": 110
+  },
+  {
+    "name": "TOMATO (THAKKALI) SEMIYA   - 180GM",
+    "price": 937
+  },
+  {
+    "name": "FOXTAIL (THINAI) SEMIYA -  180GM",
+    "price": 177
+  },
+  {
+    "name": "LITTLE MILLET (SAAMAI) SEMIYA - 180GM",
+    "price": 977
+  },
+  {
+    "name": "RAGI (KELVARAGU) SEMIYA-180GM",
+    "price": 904
+  },
+  {
+    "name": "CURRY LEAVES (KARUVEPILLAI) SEMIYA-180GM",
+    "price": 364
+  },
+  {
+    "name": "SOYA SEMIYA - 180GM",
+    "price": 680
+  },
+  {
+    "name": "WHEAT (KOTHUMAI) SEMIYA-180GM",
+    "price": 233
+  },
+  {
+    "name": "KODO MILLET (VARAGU) - 180GM",
+    "price": 213
+  },
+  {
+    "name": "MORINGA (MURUNGAI) NOODLES - 190GM",
+    "price": 334
+  },
+  {
+    "name": "FINGER MILLET (RAGI) NOODLES - 180GM",
+    "price": 576
+  },
+  {
+    "name": "MULTI-MILLET NOODLES   - 180GM",
+    "price": 344
+  },
+  {
+    "name": "MULTI-MILLET NOODLES - 190GM",
+    "price": 693
+  },
+  {
+    "name": "PEARL MILLET (KAMBU) NOODLES - 180GM",
+    "price": 977
+  },
+  {
+    "name": "BRIDEGROOM (MAPILAI SAMBA) RICE NOODLES - 180GM",
+    "price": 357
+  },
+  {
+    "name": "SOYA NOODLEES  -  180GM",
+    "price": 169
+  },
+  {
+    "name": "FOXTAIL MILLET (THINAI) NOODLES  - 180GM",
+    "price": 399
+  },
+  {
+    "name": "WHEAT (KOTHUMAI) NOODLES - 180GM",
+    "price": 424
+  },
+  {
+    "name": "RED RICE (SIVAPPU ARISI) NOODLES - 180GM",
+    "price": 403
+  },
+  {
+    "name": "MILLET (SIRUTHAANIYAM) NOODLES - 175GM",
+    "price": 519
+  },
+  {
+    "name": "HORSE GRAM (KOLLU) NOODLES - 180GM",
+    "price": 273
+  },
+  {
+    "name": "BARNYARD MILLET (KUTHIRAI VAALI) NOODLES - 180GM",
+    "price": 693
+  },
+  {
+    "name": "LITTLE MILLET (SAAMAI) NOODLES  - 190GM",
+    "price": 893
+  },
+  {
+    "name": "MULTI MILLET NOODLES - 190GM",
+    "price": 974
+  },
+  {
+    "name": "FINGER MILLET (RAGI) NOODLES  - 190GM",
+    "price": 314
+  },
+  {
+    "name": "QUINOA (SEEMAI THINAI)  NOODLES  - 190GM",
+    "price": 945
+  },
+  {
+    "name": "RED RICE (SIVAPPU ARISI) NOODLES -190GM",
+    "price": 772
+  },
+  {
+    "name": "WHEAT (KOTHUMAI) RAVA - 500GM",
+    "price": 546
+  },
+  {
+    "name": "WHEAT (KOTHUMAI) RAVA - 250GM",
+    "price": 363
+  },
+  {
+    "name": "WHITE (VELLAI) RAVA - 500GM",
+    "price": 301
+  },
+  {
+    "name": "ROASTED SOOJI (RAVA)  - 500GM",
+    "price": 717
+  },
+  {
+    "name": "LITTLE MILLET (SAAMAI) RAVA -  400GM",
+    "price": 176
+  },
+  {
+    "name": "RAGI (KELVARAGU) RAVA - 400GM",
+    "price": 634
+  },
+  {
+    "name": "BARNYARD MILLET (KUTHURAI VALI) RAVA - 400GM",
+    "price": 840
+  },
+  {
+    "name": "FOXTAIL MILLET (THINAI) RAVA - 400GM",
+    "price": 301
+  },
+  {
+    "name": "PEARL MILLET (KAMBU) RAVA - 400GM",
+    "price": 442
+  },
+  {
+    "name": "FOXTAIL - WHEAT (THINAI - KOTHUMAI) RAVA - 250GM",
+    "price": 681
+  },
+  {
+    "name": "KODO MILLET (VARAGU) SAMBA RAVA - 250GM",
+    "price": 198
+  },
+  {
+    "name": "LITTLE MILLET - WHEAT (SAAMAI KOTHUMAI) RAVA - 250GM",
+    "price": 254
+  },
+  {
+    "name": "BARNYARD - WHEAT (KUTHURAIVALI KOTHUMAI) RAVA - 250GM",
+    "price": 945
+  },
+  {
+    "name": "PROSOMILLET (PANIVARAGU) SAMBA RAVA - 250GM",
+    "price": 851
+  },
+  {
+    "name": "BROKEN WHEAT (KOTHUMAI KURANAI) RAVA - 500GM",
+    "price": 647
+  },
+  {
+    "name": "GINGLY OIL (NALLENNAI) - 1L",
+    "price": 942
+  },
+  {
+    "name": "GINGLY OIL (NALLENNAI) - 500ML",
+    "price": 697
+  },
+  {
+    "name": "GROUNDNUT OIL (KADALAI ENNAI) - 1L",
+    "price": 367
+  },
+  {
+    "name": "GROUNDNUT OIL (KADALAI ENNAI) - 500ML",
+    "price": 162
+  },
+  {
+    "name": "COCONUT OIL (THENGAI ENNAI) - 1L",
+    "price": 123
+  },
+  {
+    "name": "COCONUT OIL (THENGAI ENNAI) - 500ML",
+    "price": 727
+  },
+  {
+    "name": "MUSTARD OIL (KADUGU ENNAI) - 500ML",
+    "price": 170
+  },
+  {
+    "name": "CASTOR OIL (VELAKENNAI) - 100ML",
+    "price": 848
+  },
+  {
+    "name": "SUNFLOWER OIL (SOORIYAKAANTHI ENNAI)  - 1L",
+    "price": 959
+  },
+  {
+    "name": "SUNFLOWER OIL  (SOORIYAKAANTHI ENNAI) - 500ML",
+    "price": 669
+  },
+  {
+    "name": "NEEM ESSENTIAL OIL - 15ML",
+    "price": 941
+  },
+  {
+    "name": "EUCALYPTUS OIL - 10ML",
+    "price": 437
+  },
+  {
+    "name": "BUFFALO GHEE (ERUMAI NEI)- 500ML",
+    "price": 324
+  },
+  {
+    "name": "COW GHEE  (PASU NEI) - 500ML",
+    "price": 432
+  },
+  {
+    "name": "KANGEYAM COUNTRY COW GHEE (NAATU MAADU NEI) - 500ML",
+    "price": 843
+  },
+  {
+    "name": "BUFFALO GHEE  (ERUMAI NEI) - 200GM",
+    "price": 439
+  },
+  {
+    "name": "KANGEYAM COUNTRY COW GHEE (NAATU MAADU NEI)  - 200G",
+    "price": 980
+  },
+  {
+    "name": "AK COW GHEE  (PASU NEI) - 195ML ",
+    "price": 594
+  },
+  {
+    "name": "COW GHEE (PASU NEI)- 490ML",
+    "price": 773
+  },
+  {
+    "name": "HAPPY HEART - 250ML",
+    "price": 991
+  },
+  {
+    "name": "PINK BERRY WINE",
+    "price": 742
+  },
+  {
+    "name": "GOLDEN PASSION WINE",
+    "price": 958
+  },
+  {
+    "name": "RED VIOLET WINE",
+    "price": 792
+  },
+  {
+    "name": "RED VIOLET (FESTIVE EDITION) WINE",
+    "price": 554
+  },
+  {
+    "name": "HIMALAYAN HONEY - 350G",
+    "price": 415
+  },
+  {
+    "name": "PURE ACACIA HONEY - 500G",
+    "price": 983
+  },
+  {
+    "name": "PURE SUNFLOWER HONEY - 500G",
+    "price": 491
+  },
+  {
+    "name": "PURE MUSTARD HONEY - 500G",
+    "price": 281
+  },
+  {
+    "name": "HIMALAYAN HONEY - 150G",
+    "price": 117
+  },
+  {
+    "name": "PURE TULSI HONEY- 500G",
+    "price": 817
+  },
+  {
+    "name": "PEARL MILLET (KAMBU) PASTA - 180GM",
+    "price": 750
+  },
+  {
+    "name": "MORINGA (MURUNGAI) PASTA - 180GM",
+    "price": 897
+  },
+  {
+    "name": "RED RICE  (SIVAPPU ARISI) PASTA - 180GM",
+    "price": 164
+  },
+  {
+    "name": "KODA MILLET (VARAGU) PASTA - 180GM",
+    "price": 915
+  },
+  {
+    "name": "FINGER MILLET (RAGI) PASTA - 180GM",
+    "price": 100
+  },
+  {
+    "name": "MULTI MILLET PASTA - 180GM",
+    "price": 315
+  },
+  {
+    "name": "FOXTAIL (THINAI) MILLET PASTA - 180GM",
+    "price": 844
+  },
+  {
+    "name": "BARNYARD MILLET (KUTHIRAIVAALI) PASTA - 180GM",
+    "price": 933
+  },
+  {
+    "name": "LITTLE MILLET (SAAMAI) PASTA - 180GM",
+    "price": 454
+  },
+  {
+    "name": "WHEAT - RAGI (KOTHUMAI - KELVARAGU) PASTA - 180GM",
+    "price": 942
+  },
+  {
+    "name": "WHEAT (KOTHUMAI) - KARUPPU KAVUNI PASTA - 180GM",
+    "price": 709
+  },
+  {
+    "name": "WHEAT - BARNYARD (KOTHUMAI -  KUTHURAIVALI) PASTA - 180GM",
+    "price": 687
+  },
+  {
+    "name": "WHEAT - MULTI MILLET PASTA - 180GM",
+    "price": 713
+  },
+  {
+    "name": "WHEAT - PEARLMILLET (KOTHUMAI - KAMBU) PASTA - 180GM",
+    "price": 767
+  },
+  {
+    "name": "WHEAT - LITTLE MILLET (KOTHUMAI - SAAMAI) PASTA - 180GM",
+    "price": 180
+  },
+  {
+    "name": "WHEAT - MORINGA (KOTHUMAI -  MURUNGAI) PASTA - 180GM",
+    "price": 807
+  },
+  {
+    "name": "WHEAT - KODOMILLET (KOTHUMAI - VARAGU) PASTA - 180GM",
+    "price": 830
+  },
+  {
+    "name": "WHEAT - FOXTAIL MILLET (KOTHUMAI - THINAI) PASTA - 180GM",
+    "price": 302
+  },
+  {
+    "name": "THOOYAMALLI RICE",
+    "price": 773
+  },
+  {
+    "name": "SIVAN SAMBA RICE",
+    "price": 261
+  },
+  {
+    "name": "KATTUYANAM RICE",
+    "price": 528
+  },
+  {
+    "name": "PONNI BOILED RICE",
+    "price": 198
+  },
+  {
+    "name": "KAIKUTHAL PULUNGAL RICE",
+    "price": 591
+  },
+  {
+    "name": "IDLYKKAR RICE",
+    "price": 115
+  },
+  {
+    "name": "RED RICE",
+    "price": 174
+  },
+  {
+    "name": "BASMATHI RICE",
+    "price": 324
+  },
+  {
+    "name": "IR 20 RICE",
+    "price": 595
+  },
+  {
+    "name": "IDLY RICE(101)",
+    "price": 164
+  },
+  {
+    "name": "IDLY RICE(102)",
+    "price": 558
+  },
+  {
+    "name": "SEERAGA SAMBA RICE",
+    "price": 629
+  },
+  {
+    "name": "RAW RICE(19A)",
+    "price": 150
+  },
+  {
+    "name": "RAW RICE(18B)",
+    "price": 773
+  },
+  {
+    "name": "KICHILI SAMBA RICE 1KG",
+    "price": 768
+  },
+  {
+    "name": "PULUNGAL RICE(3500A)",
+    "price": 526
+  },
+  {
+    "name": "KERALA RICE",
+    "price": 455
+  },
+  {
+    "name": "POONGAR RICE",
+    "price": 859
+  },
+  {
+    "name": "PULUNGAL RICE(34)",
+    "price": 975
+  },
+  {
+    "name": "KOTTARAM SAMBA",
+    "price": 808
+  },
+  {
+    "name": "KALLUNDAI SAMBA RICE",
+    "price": 221
+  },
+  {
+    "name": "NEY KICHILI RICE",
+    "price": 369
+  },
+  {
+    "name": "PAALKUDAVAALAI RICE",
+    "price": 210
+  },
+  {
+    "name": "SONAMASOORI RICE",
+    "price": 952
+  },
+  {
+    "name": "SONA MASURI STEAM RICE",
+    "price": 678
+  },
+  {
+    "name": "SONAM MASURI RAW RICE (12 MONTHS)",
+    "price": 561
+  },
+  {
+    "name": "SONA MASURI RAW RICE (18 MONTHS)",
+    "price": 696
+  },
+  {
+    "name": "SONA MASURI (UNPOLISHED) BROWN RICE",
+    "price": 723
+  },
+  {
+    "name": "KARUPPU KAVUNI RICE 1kg",
+    "price": 851
+  },
+  {
+    "name": "SIVAPU KAVUNI RICE",
+    "price": 473
+  },
+  {
+    "name": "BAMBOO RICE",
+    "price": 464
+  },
+  {
+    "name": "PISINI RICE",
+    "price": 646
+  },
+  {
+    "name": "SITHIRIKKAR RICE",
+    "price": 859
+  },
+  {
+    "name": "PULUNGAL RICE(IR 20)",
+    "price": 845
+  },
+  {
+    "name": "ILUPPAI POO SAMBA",
+    "price": 751
+  },
+  {
+    "name": "SOORAKURUVAI RICE",
+    "price": 879
+  },
+  {
+    "name": "KALABATH RICE",
+    "price": 407
+  },
+  {
+    "name": "MADUMULUNGI RICE",
+    "price": 919
+  },
+  {
+    "name": "KALANAMAK RICE",
+    "price": 716
+  },
+  {
+    "name": "BAVANI RICE",
+    "price": 278
+  },
+  {
+    "name": "VAADAN SAMBA RICE",
+    "price": 243
+  },
+  {
+    "name": "KULIVEDICHAN SAMBA RICE",
+    "price": 197
+  },
+  {
+    "name": "NEELAM SAMBA RICE",
+    "price": 280
+  },
+  {
+    "name": "KARUNGURUVAI RICE",
+    "price": 674
+  },
+  {
+    "name": "THANGA SAMBA RICE",
+    "price": 255
+  },
+  {
+    "name": "NAVARA RICE",
+    "price": 478
+  },
+  {
+    "name": "MANI SAMBA RICE",
+    "price": 174
+  },
+  {
+    "name": "KOTHUMALLI RICE",
+    "price": 689
+  },
+  {
+    "name": "RAKTHASAALI RICE",
+    "price": 787
+  },
+  {
+    "name": "CORRIANDER (MALLI) POWDER - 100GM",
+    "price": 614
+  },
+  {
+    "name": "CORRIANDER (MALLI) POWDER - 250GM",
+    "price": 264
+  },
+  {
+    "name": "KASHMIR CHILLI POWDER - 100GM",
+    "price": 308
+  },
+  {
+    "name": "BLACK PEPPER (KARUMILAGU) POWDER - 100GM",
+    "price": 885
+  },
+  {
+    "name": "BLACK PEPPER (KARUMILAGU) POWDER - 50GM",
+    "price": 438
+  },
+  {
+    "name": "WHITE PEPPER (VELLAI MILAGU) POWDER - 50GM",
+    "price": 262
+  },
+  {
+    "name": "CUMIN (SEEARAGAM) POWDER - 50GM",
+    "price": 628
+  },
+  {
+    "name": "CUMIN (SEEARAGAM) POWDER-100GM",
+    "price": 180
+  },
+  {
+    "name": "SAMBAR  POWDER-100GM",
+    "price": 314
+  },
+  {
+    "name": "CURRY MASALA-100GM",
+    "price": 969
+  },
+  {
+    "name": "GARAM MASALA-100GM",
+    "price": 565
+  },
+  {
+    "name": "FENU GREEK (VENDHAIYA) POWDER - 100GM",
+    "price": 433
+  },
+  {
+    "name": "RASA PODI",
+    "price": 319
+  },
+  {
+    "name": "CHILLI (MILAGAI) POWDER - 100GM",
+    "price": 784
+  },
+  {
+    "name": "BISMI HEALTH MIX -500G",
+    "price": 997
+  },
+  {
+    "name": "YELLOW RAISIN -100G",
+    "price": 789
+  },
+  {
+    "name": "ALMOND - 100G",
+    "price": 289
+  },
+  {
+    "name": "BLACK RAISIN SEED - 100G",
+    "price": 151
+  },
+  {
+    "name": "BADAM PISIN -100G",
+    "price": 649
+  },
+  {
+    "name": "ROCK CANDY - 250G",
+    "price": 909
+  },
+  {
+    "name": "DATE SYRUP -400G",
+    "price": 183
+  },
+  {
+    "name": "FRIED CHILLI CASHEW - 200G",
+    "price": 630
+  },
+  {
+    "name": "ROSE GULKAND - 200G",
+    "price": 487
+  },
+  {
+    "name": "CALIFORNIA WALNUTS - 500G",
+    "price": 903
+  },
+  {
+    "name": "BREAKFAST MIX - 200G",
+    "price": 520
+  },
+  {
+    "name": "PITTED PRUNED(DRIED PLUMS) - 240G",
+    "price": 496
+  },
+  {
+    "name": "BLACK RAISINS (SEEDLESS) - 250G",
+    "price": 898
+  },
+  {
+    "name": "ROASTED & SALTED PISTACHIOS - 250G",
+    "price": 704
+  },
+  {
+    "name": "DIVINE ROASTED ALMOND - 200G",
+    "price": 143
+  },
+  {
+    "name": "ROASTED & SALTED CALIFORNIAN ALMONDS- 250G",
+    "price": 406
+  },
+  {
+    "name": "DRY STRAWBERRY - 250G",
+    "price": 946
+  },
+  {
+    "name": "DRIED BLUEBERRIES (WHOLE) - 75G",
+    "price": 220
+  },
+  {
+    "name": "CALIFORNIA PIDTACHIOS - 250G",
+    "price": 160
+  },
+  {
+    "name": "RAGI MALT -200G",
+    "price": 552
+  },
+  {
+    "name": "CARROT MALT -200G",
+    "price": 664
+  },
+  {
+    "name": "NENDRAN BANANA MALT - 200G",
+    "price": 667
+  },
+  {
+    "name": "BEETROOT MALT - 200G",
+    "price": 408
+  },
+  {
+    "name": "FLAX SEEDS-100G",
+    "price": 580
+  },
+  {
+    "name": "CHIA SEEDS -100G",
+    "price": 244
+  },
+  {
+    "name": "FLAX SEEDS (ROASTED)-100G",
+    "price": 337
+  },
+  {
+    "name": "SUNFLOWER SEEDS - 100G",
+    "price": 486
+  },
+  {
+    "name": "MUSKMELON SEEDS -100G",
+    "price": 346
+  },
+  {
+    "name": "PUMPKIN SEEDS - 100G",
+    "price": 921
+  },
+  {
+    "name": "CUCUMBER SEEDS - 100G",
+    "price": 652
+  },
+  {
+    "name": "SABJA SEEDS - 100G",
+    "price": 183
+  },
+  {
+    "name": "SEED MIX - 200G",
+    "price": 218
+  },
+  {
+    "name": "SESAME SEEDS - 100G",
+    "price": 793
+  },
+  {
+    "name": "GARLIC (POONDU) SOUP - 100G",
+    "price": 369
+  },
+  {
+    "name": "SYZYGIUM CUMINI NUT (NAAVAL KAAI VIDHAI) SOUP - 100G",
+    "price": 371
+  },
+  {
+    "name": "SOLANUM NIGRUM SOUP (MANATHAKKALI) - 100G",
+    "price": 491
+  },
+  {
+    "name": "AMLA (NELLIKAI) SOUP - 100G",
+    "price": 696
+  },
+  {
+    "name": "FICUS GLOMERATA FRUIT (ATTHIPALAM) SOUP - 100G",
+    "price": 417
+  },
+  {
+    "name": "CYNODON DACIYLON (ARUGAMPUL)  SOUP - 100G",
+    "price": 622
+  },
+  {
+    "name": "HIBISCUS (SEMBARUTHI) SOUP - 100G",
+    "price": 124
+  },
+  {
+    "name": "ALTEM ANTHERA TRAINDRA  (PAASALAI) - 100G",
+    "price": 743
+  },
+  {
+    "name": "HIBISCUS (SEMBARUTHI) SOUP - 25G",
+    "price": 967
+  },
+  {
+    "name": "HORSE GRAM (KOLLU) SOUP - 100G",
+    "price": 246
+  },
+  {
+    "name": "MORINGA LEAF SOUP (MURUNGAI KEERAI) - 100G",
+    "price": 446
+  },
+  {
+    "name": "BRAHMI SOUP (VALLARAI) - 110G",
+    "price": 153
+  },
+  {
+    "name": "MUSA PARADISIACA (VAALAI) SOUP  - 100G",
+    "price": 211
+  },
+  {
+    "name": "CASSIA AURICULATA (AAVARAM POO) SOUP - 100G",
+    "price": 130
+  },
+  {
+    "name": "CARDIO SPERMUM HALICACABUM (MUDAKATHAAN) SOUP - 100G",
+    "price": 435
+  },
+  {
+    "name": "SOLANUMTRILOBATUM (THUTHIKAI) SOUP - 100G",
+    "price": 121
+  },
+  {
+    "name": "CURRY LEAF (KARUVEPPILAI) SOUP - 100G",
+    "price": 448
+  },
+  {
+    "name": "LENTIL POWDER (PARUPPU PODI) - 100GM",
+    "price": 137
+  },
+  {
+    "name": "PEANUT POWDER (NILAKADALAI PODI) - 100GM",
+    "price": 318
+  },
+  {
+    "name": "CURRY LEAF POWDER (KARUVEPPILAI PODI) - 100GM",
+    "price": 225
+  },
+  {
+    "name": "BRAHMI POWDER  (VALLARAI PODI) - 100G",
+    "price": 567
+  },
+  {
+    "name": "HORSEGRAM POWDER (KOLLU PODI) - 100GM",
+    "price": 955
+  },
+  {
+    "name": "IDLY CHILLI POWDER  (IDLI PODI) - 100GM",
+    "price": 538
+  },
+  {
+    "name": "AMLA POWDER  (NELLIKAI  PODI)- 100GM",
+    "price": 133
+  },
+  {
+    "name": "SESAME POWDER  (ELLU PODI) - 100GM",
+    "price": 880
+  },
+  {
+    "name": "PEARL MILLET (KAMBU) MURUKKU  - 200G",
+    "price": 991
+  },
+  {
+    "name": "FINGER MILLET RIBBON (KELVARAGU) PAKODA - 200G",
+    "price": 875
+  },
+  {
+    "name": "FOXTAIL MILLET (THINAI) KUZHAL MURUKKU - 200G",
+    "price": 732
+  },
+  {
+    "name": "PEARL MILLET PEPPER (KAMBU MILAGU) KARASEV - 200G",
+    "price": 868
+  },
+  {
+    "name": "ELANDHAVADAI HOT & SWEET - 80G",
+    "price": 409
+  },
+  {
+    "name": "LITTLE MILLET (SAAMAI) COOKIES - 100G",
+    "price": 136
+  },
+  {
+    "name": "BARNYARD MILLET (KUTHIRAIVAALI) COOOKIES - 100G",
+    "price": 909
+  },
+  {
+    "name": "KODO MILLET (VARAGU) COOKIES - 100G",
+    "price": 925
+  },
+  {
+    "name": "PEARL MILLET (KAMBU)  COOKIES - 100G",
+    "price": 707
+  },
+  {
+    "name": "MULTI MILLET (SIRUTHANIYAM) COOKIES - 100G",
+    "price": 221
+  },
+  {
+    "name": "FINGER MILLET (KELVARAGU) COOKIES - 100G",
+    "price": 763
+  },
+  {
+    "name": "RUSKONA - 110G",
+    "price": 599
+  },
+  {
+    "name": "COCONUT (THENGAI) BARFI - 250G",
+    "price": 854
+  },
+  {
+    "name": "GROUNDNUT (KADALAI)  KOVA - 250G",
+    "price": 725
+  },
+  {
+    "name": "SESEME BALLS  (ELLU URUNDAI) - 250G",
+    "price": 578
+  },
+  {
+    "name": "GROUNDNUT BALLS (KADALAI URUNDAI) - 250G",
+    "price": 249
+  },
+  {
+    "name": "FOXTAIL MILLET (THINAI) LADDO - 250G",
+    "price": 706
+  },
+  {
+    "name": "PEARL MILLET  (KAMBU) LADDO - 250G",
+    "price": 978
+  },
+  {
+    "name": "GREEN GRAM  (PACHAI PAYIRU) LADDO - 250G",
+    "price": 179
+  },
+  {
+    "name": "KARUPPUKAVUNI LADDO - 250G",
+    "price": 937
+  },
+  {
+    "name": "LITTLE MILLET (SAAMAI) LADDO - 250G",
+    "price": 657
+  },
+  {
+    "name": "KARUPPUKAVUNI LADDO - 100G",
+    "price": 352
+  },
+  {
+    "name": "GROUNDNUT (NILAKADALAI)  KOVA - 150G",
+    "price": 840
+  },
+  {
+    "name": "LITTLE MILLET (SAAMAI ) LADDO - 100G",
+    "price": 185
+  },
+  {
+    "name": "GREEN GRAM (PACHA PAYIRU) LADDO - 100G",
+    "price": 485
+  },
+  {
+    "name": "GROUNDNUT (NILAKADALAI)  BALLS - 100G",
+    "price": 201
+  },
+  {
+    "name": "PEARL MILLET (KAMBU) LADDO - 100G",
+    "price": 559
+  },
+  {
+    "name": "FOXTAIL MILLET (THINAI) LADDO - 100G",
+    "price": 781
+  },
+  {
+    "name": "COCONUT (THENGAI) POP - 50G",
+    "price": 168
+  },
+  {
+    "name": "ALMOND (BADAM) POP - 50G",
+    "price": 214
+  },
+  {
+    "name": "MILLALA INDIAN SPICES- 50G",
+    "price": 833
+  },
+  {
+    "name": "PEANUT (KADALAI) POP - 50G",
+    "price": 127
+  },
+  {
+    "name": "MILLALA CHEESE & MINT (PUDINA) - 50G",
+    "price": 657
+  },
+  {
+    "name": "MILLALA INDIAN TOMATO (THAKKALI) - 50G",
+    "price": 861
+  },
+  {
+    "name": "MILLET BYTES TANGY TOMATO (KAARA THAKKALI) - 50G",
+    "price": 365
+  },
+  {
+    "name": "MILLET BYTES ALMOND (BADAM) CRUNCH  - 50G",
+    "price": 279
+  },
+  {
+    "name": "MILLET BYTES COCONUT (THENGAI) CRISPY - 50G",
+    "price": 251
+  },
+  {
+    "name": "MILLET BYTES VANILLA FILLS - 250G",
+    "price": 303
+  },
+  {
+    "name": "MILLET BYTES CHOCO FILLS - 250G",
+    "price": 566
+  },
+  {
+    "name": "MILLET BYTES STRAWBERRY FILLS - 250G",
+    "price": 157
+  },
+  {
+    "name": "ELANTHAVADAI (90'S KID SPECIAL)- 80G",
+    "price": 243
+  },
+  {
+    "name": "ELANTHAVADAI SWEET - 80G",
+    "price": 228
+  },
+  {
+    "name": "KO VIBOOTHI - 100GM",
+    "price": 713
+  },
+  {
+    "name": "ALBIZIA AMARA (GREEN ARAPPU) POWDER - 500G",
+    "price": 744
+  },
+  {
+    "name": "BLACK DAMMER ( KARUPPU KUNGLIYAM) POWDER - 100G",
+    "price": 830
+  },
+  {
+    "name": "NEEM COMB (VEPPAN SEEPU)",
+    "price": 536
+  },
+  {
+    "name": "BAMBOO (MOONGIL) TOOTHBRUSH ",
+    "price": 334
+  },
+  {
+    "name": "KUNKUMADI OIL - 100ML",
+    "price": 648
+  },
+  {
+    "name": "WILD TURMERIC (KASTHURIMANJAL) - 60G",
+    "price": 647
+  },
+  {
+    "name": "HERBAL SHAMPOO - 100ML",
+    "price": 294
+  },
+  {
+    "name": "BOOTHIKAI PODI - 50G",
+    "price": 774
+  },
+  {
+    "name": "LAUNDRY BAR (WASHING SOAP)- 190G",
+    "price": 117
+  },
+  {
+    "name": "VETIVER BATH SCRUBBER",
+    "price": 781
+  },
+  {
+    "name": "FALSE DAISY (KARISALANGKANNI) POWDER - 50G",
+    "price": 192
+  },
+  {
+    "name": "SNANA POWDER - 100G",
+    "price": 328
+  },
+  {
+    "name": "NATURAL HERBAL BATH SOAP - 70G",
+    "price": 478
+  },
+  {
+    "name": "ALOEVERA (KATRAALAI) GEL - 250G",
+    "price": 446
+  },
+  {
+    "name": "CUCUMBER ALOEVERA GEL - 250G",
+    "price": 589
+  },
+  {
+    "name": "ROSEWATER  (PANEER)  - 115ML",
+    "price": 984
+  },
+  {
+    "name": "ROYAL UBTAN FACEPACK - 50G",
+    "price": 296
+  },
+  {
+    "name": "ALOEVERA (KATRAALAI) GEL - 50G",
+    "price": 850
+  },
+  {
+    "name": "VANILLA LIP BALM",
+    "price": 989
+  },
+  {
+    "name": "THIRIPALA SOAP - 100G",
+    "price": 963
+  },
+  {
+    "name": "POMEGRANATE (MAADHULAI) SOAP - 100G",
+    "price": 333
+  },
+  {
+    "name": "KUMKUMADI OIL - 100ML",
+    "price": 391
+  },
+  {
+    "name": "LAVENDER SOAP - 100G",
+    "price": 437
+  },
+  {
+    "name": "NATURAL FACE WASH CHARCOAL -200ML",
+    "price": 538
+  },
+  {
+    "name": "COFFEE & COCOA SOAP - 100G",
+    "price": 918
+  },
+  {
+    "name": "MORINGA (MURUNGAI) SOAP - 100G",
+    "price": 535
+  },
+  {
+    "name": "HERBAL (MOOLIGAI) SOAP - 100G",
+    "price": 735
+  },
+  {
+    "name": "NEEM & TURMERIC (VEPPAN & MANJAL) SOAP - 100G",
+    "price": 478
+  },
+  {
+    "name": "ROSE SOAP - 100 GM",
+    "price": 428
+  },
+  {
+    "name": "COCO & COFFEE SOAP",
+    "price": 693
+  },
+  {
+    "name": "SHEA BUTTER SOAP - 100 GM",
+    "price": 323
+  },
+  {
+    "name": "CANE SUGAR & ORANGE PEEL SOAP-  100 GM",
+    "price": 612
+  },
+  {
+    "name": "SANDAL WOOD SOAP - 100 GM",
+    "price": 480
+  },
+  {
+    "name": "CUCUMBER & ALOEVERA SOAP",
+    "price": 330
+  },
+  {
+    "name": "ACTIVATED CHARCOAL SOAP -  100 GM",
+    "price": 916
+  },
+  {
+    "name": "ALOEVERA SOAP",
+    "price": 351
+  },
+  {
+    "name": "NEEM SOAP - 100GM",
+    "price": 520
+  },
+  {
+    "name": "PAPAYA SOAP - 100GM",
+    "price": 441
+  },
+  {
+    "name": "RED SANDAL SOAP - 100GM",
+    "price": 697
+  },
+  {
+    "name": "SANDAL SOAP - 100GM",
+    "price": 874
+  },
+  {
+    "name": "SAFFRON SOAP - 100GM",
+    "price": 962
+  },
+  {
+    "name": "NEEM SOAP 100 GM",
+    "price": 277
+  },
+  {
+    "name": "EUCALYPTUS & PEPPERMENT BATH SALT -150G",
+    "price": 587
+  },
+  {
+    "name": "LAVENDER& BASIL BATH SALT - 150G",
+    "price": 526
+  },
+  {
+    "name": "ROSE & GERANIUM BATH SALT- 150G",
+    "price": 115
+  },
+  {
+    "name": "ORANGE & LEMON GRASS BATH SALT - 150G",
+    "price": 991
+  },
+  {
+    "name": "REFRESHING LIME BATH SALT - 150G",
+    "price": 143
+  },
+  {
+    "name": "CHARCOAL CREAM - 100G",
+    "price": 139
+  },
+  {
+    "name": "CHARCOAL SCRUB - 100G",
+    "price": 587
+  },
+  {
+    "name": "WALNUT SCRUB -100G",
+    "price": 585
+  },
+  {
+    "name": "APPRICOT SCRUB - 100G",
+    "price": 446
+  },
+  {
+    "name": "PAPAYA SCRUB - 100G",
+    "price": 576
+  },
+  {
+    "name": "MANICURE & PEDICURE SCRUB - 100G",
+    "price": 345
+  },
+  {
+    "name": "ALMOND SCRUB - 100G",
+    "price": 114
+  },
+  {
+    "name": "HERBAL HAIR OIL - 200ML",
+    "price": 950
+  },
+  {
+    "name": "VITAMIN E OIL - 100ML",
+    "price": 472
+  },
+  {
+    "name": "NATURAL HERBAL OIL - 100ML",
+    "price": 449
+  },
+  {
+    "name": "BLACK PANTHER OIL - 100ML",
+    "price": 882
+  },
+  {
+    "name": "ONION SHAMPOO - 200ML",
+    "price": 125
+  },
+  {
+    "name": "CHARCOAL SHAMPOO - 200ML",
+    "price": 683
+  },
+  {
+    "name": "ALMOND OIL - 200ML",
+    "price": 375
+  },
+  {
+    "name": "HERBAL HAIR OIL - 100ML",
+    "price": 460
+  },
+  {
+    "name": "OLIVE OIL - 100ML",
+    "price": 686
+  },
+  {
+    "name": "HAIR OIL (AO) - 100ML",
+    "price": 115
+  },
+  {
+    "name": "HIBISCUS HAIR OIL - 200ML",
+    "price": 444
+  },
+  {
+    "name": "VETTIVER HAIR OIL - 200ML",
+    "price": 613
+  },
+  {
+    "name": "VITAMIN C OIL - 100ML",
+    "price": 699
+  },
+  {
+    "name": "ONION OIL - 100ML",
+    "price": 426
+  },
+  {
+    "name": "FRENCH BLEND COFFEE -150G",
+    "price": 753
+  },
+  {
+    "name": "HIGH VOLTAGE COFFEE -150G",
+    "price": 445
+  },
+  {
+    "name": "PEA BERRY 80% COFFEE -150G",
+    "price": 585
+  },
+  {
+    "name": "MYSORE NUGGETS COFFEE -150G",
+    "price": 338
+  },
+  {
+    "name": "BROWN GOLD COFFEE - 200G",
+    "price": 666
+  },
+  {
+    "name": "ITALIAN ESPRESSO ROAST COFFEE - 200G",
+    "price": 989
+  },
+  {
+    "name": "GOLD RIBBON COFFEE (COFFEE 65%CHICORY 35%) - 200G",
+    "price": 853
+  },
+  {
+    "name": "AROMA GOLD (COFFEE 70% CHICORY 30%) - 150G",
+    "price": 175
+  },
+  {
+    "name": "MONKEY PARCHMENT COFFEE(COFFEE 80% CHICORY 20%) - 150G",
+    "price": 498
+  },
+  {
+    "name": "WILD COFFEE (COFFEE 80% CHICORY 20%) - 150G",
+    "price": 784
+  },
+  {
+    "name": "E2H COFFEE (COFFEE 80%) - 200G",
+    "price": 662
+  },
+  {
+    "name": "PREMIUM ASSAM TEA - 100G",
+    "price": 201
+  },
+  {
+    "name": "JAMUN (NAVAL VIDHAI) POWDER - 50G",
+    "price": 990
+  },
+  {
+    "name": "BLACK NIGHTSHADE (MANATHAKKALI) POWDER - 50G",
+    "price": 517
+  },
+  {
+    "name": "BAEL (VILVA ) LEAF POWDER - 50G",
+    "price": 869
+  },
+  {
+    "name": " CALAMUS / SWEET FLAG (VASAMBU) POWDER - 50G",
+    "price": 136
+  },
+  {
+    "name": "FALSE DAISY (KARISALANKANNI) POWDER - 50G",
+    "price": 400
+  },
+  {
+    "name": "BALLOON VINE (MUDAKATHAN) POWDER - 50G",
+    "price": 281
+  },
+  {
+    "name": "LOTUS (THAMARAI) POWDER - 50G",
+    "price": 475
+  },
+  {
+    "name": "ANDROGRAPHIS (NILAVEMBU) POWDER - 50G",
+    "price": 425
+  },
+  {
+    "name": "BERMUDA GRASS (ARUGAMPUL) POWDER - 50G",
+    "price": 398
+  },
+  {
+    "name": "THULASI LEAF POWDER - 50G",
+    "price": 611
+  },
+  {
+    "name": "COUNTRY GOOSEBERRY(KEELANELLI) POWDER - 50G",
+    "price": 659
+  },
+  {
+    "name": "ASWAGANDHA POWDER - 50G",
+    "price": 976
+  },
+  {
+    "name": "CASSIA AURICULATA (AVARAM POO) POWDER - 50G",
+    "price": 818
+  },
+  {
+    "name": "TRIBULUS TERRESTRIS (SIRUNERUNJIL) POWDER - 50G",
+    "price": 267
+  },
+  {
+    "name": "TRIKADUKU POWDER - 50G",
+    "price": 426
+  },
+  {
+    "name": "TERMINALIA CHEBULA (KADUKKAI) POWDER - 50G",
+    "price": 737
+  },
+  {
+    "name": "VETTI VER - 50G",
+    "price": 114
+  },
+  {
+    "name": "VELDT GRAPE (PIRANDAI) THOKKU - 200GM",
+    "price": 520
+  },
+  {
+    "name": "MANGO PICKLE - 200GM",
+    "price": 655
+  },
+  {
+    "name": "CITRON (NAARTHANGAI) PICKLE - 200GM",
+    "price": 679
+  },
+  {
+    "name": "COUNTRY SUGAR - 500GM",
+    "price": 879
+  },
+  {
+    "name": "COCONUT SUGAR - 250GM",
+    "price": 802
+  },
+  {
+    "name": "COUNTRY SUGAR  -1KG",
+    "price": 471
+  },
+  {
+    "name": "SOYACHUNKS (MEAL MAKER) (BIG) - 250G",
+    "price": 928
+  },
+  {
+    "name": "FINO GREEK (VENTHAYAM)- 100G",
+    "price": 480
+  },
+  {
+    "name": "HIMALAYAN SALT CRYSTAL- 500GM",
+    "price": 528
+  },
+  {
+    "name": " SUGARCANE JAGGERY (KATTI VELLAM) -1KG",
+    "price": 519
+  },
+  {
+    "name": "PALM SUGAR 250 G",
+    "price": 483
+  },
+  {
+    "name": "AJWAIN (OMAM) - 50GM",
+    "price": 477
+  },
+  {
+    "name": "WHITE SESAME (VELLAI ELLU) - 100GM",
+    "price": 106
+  },
+  {
+    "name": "SAGO (JAVARISI) - 250GM",
+    "price": 370
+  },
+  {
+    "name": "AGAR AGAR (KADAL PAASI) - 8G",
+    "price": 147
+  },
+  {
+    "name": "PANAKALKANDU-100GM",
+    "price": 237
+  },
+  {
+    "name": "ACHU VELLAM- 500GM",
+    "price": 970
+  },
+  {
+    "name": "CUMIN SEEDS (SEERAGAM) - 100G",
+    "price": 143
+  },
+  {
+    "name": "DISHWASH POWDER - 500G",
+    "price": 384
+  },
+  {
+    "name": "KITCHEN CLEANER - 500ML",
+    "price": 812
+  },
+  {
+    "name": "NATURAL LAUNDRY DETERGENT - 500ML",
+    "price": 583
+  },
+  {
+    "name": "NATURE SPRAY LAVENDER - 250ML",
+    "price": 214
+  },
+  {
+    "name": "NATURE SPRAY LEMON- 250ML",
+    "price": 132
+  },
+  {
+    "name": "NATURE SPRAY WHITE LILY - 250ML",
+    "price": 636
+  },
+  {
+    "name": "TOILET CLEANER - 500ML",
+    "price": 705
+  },
+  {
+    "name": "BATHROOM CLEANER - 500ML",
+    "price": 820
+  },
+  {
+    "name": "GLASS CLEANER SPRAY - 500ML",
+    "price": 296
+  },
+  {
+    "name": "HERBAL COCKROACH REPELLANT - 100ML",
+    "price": 948
+  },
+  {
+    "name": "HERBAL COCKROACH REPELLANT OIL GEL",
+    "price": 355
+  },
+  {
+    "name": "AYURVEDIC COCKROACH REPELANT - 200ML",
+    "price": 832
+  },
+  {
+    "name": "HERBAL HOUSEFLY REPELLANT - 100ML",
+    "price": 265
+  },
+  {
+    "name": "HERBAL MOSQUITO REPELLANT BODY SPRAY - 100ML",
+    "price": 1000
+  },
+  {
+    "name": "HERBAL MOSQUITO REPELLANT ROOM SPRAY - 100ML",
+    "price": 116
+  },
+  {
+    "name": "NATURE SPRAY SANDAL - 250ML",
+    "price": 437
+  },
+  {
+    "name": "NATURE SPRAY ROSE - 250ML",
+    "price": 397
+  },
+  {
+    "name": "ONION  (VENGAYAM) VADAGAM - 100GM",
+    "price": 482
+  },
+  {
+    "name": "CARROT VADAGAM-100GM",
+    "price": 787
+  },
+  {
+    "name": "AJWAIN (OMAM) VADAGAM - 100GM",
+    "price": 217
+  },
+  {
+    "name": "KASURI METHI (VENDIYA KEERAI) VADAGAM - 100GM",
+    "price": 460
+  },
+  {
+    "name": "RAGI VADAGAM - 100GM",
+    "price": 405
+  },
+  {
+    "name": "GARLIC (POONDU) VADAGAM - 100GM",
+    "price": 631
+  },
+  {
+    "name": "POTATO (URULAIKILANGU) VADAGAM - 100GM",
+    "price": 976
+  },
+  {
+    "name": "CUMIN SEEDS (SEERAGAM)  VADAGAM - 100GM",
+    "price": 295
+  },
+  {
+    "name": "CHILLI GARLIC VADAGAM - 100GM",
+    "price": 741
+  },
+  {
+    "name": "MINT (PUDINA) LEAVES VADAGAM - 100GM",
+    "price": 964
+  },
+  {
+    "name": "BEETROOT VADAGAM - 100GM",
+    "price": 767
+  },
+  {
+    "name": "GREEN CHILLI  (PACHAI MILAGAI) VADAGAM - 100GM",
+    "price": 517
+  },
+  {
+    "name": "TOMATO (THAKKALI) VADAGAM - 100GM",
+    "price": 864
+  },
+  {
+    "name": "CORN (MAKKA SOLAM) VADAGAM - 100GM",
+    "price": 498
+  },
+  {
+    "name": "TURKEY BERRY (SUNDAKKAI) VATHAL - 1 PCS",
+    "price": 354
+  },
+  {
+    "name": "GUNDU MORE MILAGAI VATHAL - 1 PCS",
+    "price": 703
+  },
+  {
+    "name": "KUDAMPULI",
+    "price": 445
+  },
+  {
+    "name": "BLACK PEPPER  (KARUMILAGU) - 200GM",
+    "price": 834
+  },
+  {
+    "name": "BLACK CUMIN (KARUNJEERAGAM) - 100GM",
+    "price": 345
+  },
+  {
+    "name": "BLACK PEPPER (KARUMILAGU) - 100GM",
+    "price": 931
+  },
+  {
+    "name": "WHITE PEPPER (VELLAI MILAGU) - 100GM",
+    "price": 963
+  },
+  {
+    "name": "MUSTARD (KADUGU) - 100GM",
+    "price": 517
+  },
+  {
+    "name": "MUSTARD (KADUGU) - 200GM",
+    "price": 841
+  },
+  {
+    "name": "MUSTARD (KADUGU) - 150GM",
+    "price": 949
+  },
+  {
+    "name": "BIRIYANI ILAI",
+    "price": 645
+  },
+  {
+    "name": "CINNAMON (PATTAI) - 20GM",
+    "price": 903
+  },
+  {
+    "name": "CLOVES (KIRAMBU) - 50GM",
+    "price": 287
+  },
+  {
+    "name": "FENEL SEEDS (SOMBU) - 50GM",
+    "price": 443
+  },
+  {
+    "name": "FENEL SEEDS (SOMBU) - 100GM",
+    "price": 638
+  },
+  {
+    "name": "KADUKAI - 50GM",
+    "price": 887
+  },
+  {
+    "name": "FENEL SEEDS  (SOMBU)- 25GM",
+    "price": 436
+  },
+  {
+    "name": "CORIANDER (NATTU MALLI)-250GM",
+    "price": 936
+  },
+  {
+    "name": "TEJA RED CHILLI ( TEJA MILAGAI) - 100GM",
+    "price": 813
+  },
+  {
+    "name": "GUNDU MILAGAI - 200GM",
+    "price": 366
+  },
+  {
+    "name": "GUNDU MILAGAI - 100GM",
+    "price": 672
+  },
+  {
+    "name": "NUTMEG (JAATHIKAAI) - 1PCS",
+    "price": 355
+  },
+  {
+    "name": "VIRALI MANJAL -  50G",
+    "price": 642
+  },
+  {
+    "name": "POPPY SEED (KASA KASA) - 20GM",
+    "price": 930
+  },
+  {
+    "name": "CARDAMOM (YELAKKAI) - 25GM",
+    "price": 677
+  },
+  {
+    "name": " WHITE URAD DAL (VELLAI MOTTU ULUNDHU) - 500GM",
+    "price": 836
+  },
+  {
+    "name": " WHITE URAD DAL (VELLAI MOTTU ULUNDHU) - 1KG",
+    "price": 997
+  },
+  {
+    "name": "TOOR DAL (THUVARAM PARUPPU) - 500GM",
+    "price": 485
+  },
+  {
+    "name": "SOILED TOOR DAL (MANKATTIYA THUVARAM PARUPPU)- 500GM",
+    "price": 303
+  },
+  {
+    "name": "PAASI PAYIRU (RAINFALL YIELD)-500GM",
+    "price": 216
+  },
+  {
+    "name": "MYSORE DAL - 250GM",
+    "price": 246
+  },
+  {
+    "name": "BLACK URAD DAL(BROKEN) (KARUPPU ULUNDHAM PARUPPU)- 500GM",
+    "price": 734
+  },
+  {
+    "name": "BLACK URAD DAL (KARUPPU ULUNDHU) - 500GM",
+    "price": 377
+  },
+  {
+    "name": "MYSORE DAL - 500GM",
+    "price": 724
+  },
+  {
+    "name": "GREEN GRAM (PAASI PAYIRU) (NATTU) - 500GM",
+    "price": 336
+  },
+  {
+    "name": "MOONG DHAL (SPLIT) (PAASI PARUPPU) (NATTU) - 500GM",
+    "price": 932
+  },
+  {
+    "name": "CHANNA DHAL (KADALAI PARUPPU) - 500GM",
+    "price": 233
+  },
+  {
+    "name": "BENGAL GRAM FULL (MULU POTTU KADALAI) - 500GM",
+    "price": 134
+  },
+  {
+    "name": "BENGAL GRAM FULL (MULU POTTU KADALAI) - 250GM",
+    "price": 662
+  },
+  {
+    "name": "BENGAL GRAM (SPLIT) (POTTU KADALAI) - 250GM",
+    "price": 602
+  },
+  {
+    "name": "BENGAL GRAM (SPLIT) (POTTU KADALAI) - 500GM",
+    "price": 880
+  },
+  {
+    "name": "BELLAR DHAL (AVARAI PARUPPU )- 250GM",
+    "price": 923
+  },
+  {
+    "name": "DOUBLE CURRY BEANS  (IRETTAI AVARAI) - 250GM",
+    "price": 953
+  },
+  {
+    "name": "RANGOON BEANS (MOCHAI ) - 250GM",
+    "price": 830
+  },
+  {
+    "name": "RED (SIVAPPU) RAJMA - 250GM",
+    "price": 853
+  },
+  {
+    "name": "BUTTER BEANS SEEDS (VARI MOCHAI) - 250GM",
+    "price": 282
+  },
+  {
+    "name": "BLACK EYED  PEAS  (THATTA PAYIR) - 250GM",
+    "price": 162
+  },
+  {
+    "name": "GREEN PEAS (PACHA PATTANI) - 250GM",
+    "price": 449
+  },
+  {
+    "name": "WHITE PEAS (VELLA PATTANI) - 250GM",
+    "price": 794
+  },
+  {
+    "name": "DOT BEANS (PULLI PATTANI) - 250GM",
+    "price": 857
+  },
+  {
+    "name": "SOYA BEANS - 250GM",
+    "price": 633
+  },
+  {
+    "name": "YELLOW SORGHUM (MANJAL CHOLAM) - 500GM",
+    "price": 542
+  },
+  {
+    "name": "RED SORGHUM (SIVAPU CHOLAM) - 500GM",
+    "price": 904
+  },
+  {
+    "name": "NILAKADALAI (GROUNDNUT) - 250GM",
+    "price": 283
+  },
+  {
+    "name": "WHITE SORGHUM (VELLAI CHOLAM) - 500GM",
+    "price": 919
+  },
+  {
+    "name": "HORSE GRAM (KOLLU) - 250GM",
+    "price": 378
+  },
+  {
+    "name": "WHITE CHANNA (VELLAI SUNDAL) - 500GM",
+    "price": 448
+  },
+  {
+    "name": "WHITE CHANNA (VELLAI SUNDAL) - 250GM",
+    "price": 585
+  },
+  {
+    "name": "BLACK HORSE GRAM (KARUPU KOLLU) - 250GM",
+    "price": 968
+  },
+  {
+    "name": "BLACK CHANNA (KARUPU SUNDAL) - 250GM",
+    "price": 429
+  },
+  {
+    "name": "BLACK CHANNA (KARUPU SUNDAL) - 500GM",
+    "price": 363
+  },
+  {
+    "name": " FOXTAIL (THINAI) (UNPOLISHED) - 500GM",
+    "price": 367
+  },
+  {
+    "name": "LITTLE MILLET (SAAMAI) (UNPOLISHED) - 500GM",
+    "price": 150
+  },
+  {
+    "name": "BARNYARD MILLET (KUTHURA VALI)(UNPOLISHED)-500GM",
+    "price": 603
+  },
+  {
+    "name": "LITTLE MILLET (KULA SAAMAI) - 500GM",
+    "price": 297
+  },
+  {
+    "name": "RAGI (KELVARAGU)- 500GM",
+    "price": 984
+  },
+  {
+    "name": "RAGI (KELVARAGU) - 1KG",
+    "price": 785
+  },
+  {
+    "name": "BARNYARD MILLET (KUTHURAIVALI) (POLISHED)",
+    "price": 773
+  },
+  {
+    "name": "KARUPU KAVUNI KURANAI-250GM",
+    "price": 349
+  },
+  {
+    "name": "LITTLE MILLET (SAAMAI) (POLISHED)-500GM",
+    "price": 156
+  },
+  {
+    "name": "SAMBA KOTHUMAI - 500GM",
+    "price": 352
+  },
+  {
+    "name": "CORN (MAKKA CHOLAM KURUNAI ) - 250GM",
+    "price": 751
+  },
+  {
+    "name": "CORN (MAKKA CHOLLAM) - 500GM",
+    "price": 699
+  },
+  {
+    "name": "WHEAT (KOTHUMAI) - 1KG",
+    "price": 886
+  },
+  {
+    "name": "FOXTAIL (THINAI) (POLISHED) - 500GM",
+    "price": 130
+  },
+  {
+    "name": "WILD PEARL MILLET (KAATU KAMBU) - 500GM",
+    "price": 924
+  },
+  {
+    "name": "PROSO KODO (PANI VARAGU) (POLISHED)-500GM",
+    "price": 562
+  },
+  {
+    "name": "KODO MILLET (VARAGU) (POLISHED)-500GM",
+    "price": 1000
+  },
+  {
+    "name": "PEARL MILLET (GUNDU KAMBU) - 500GM",
+    "price": 764
+  },
+  {
+    "name": "PEARL MILLET (KAMBU) (POLISHED)-500GM",
+    "price": 956
+  },
+  {
+    "name": "BARLEY RICE (VAAL KOTHUMAI) -500GM",
+    "price": 250
+  },
+  {
+    "name": "CORN FLOUR (CHOLA MAAVU) - 250GM",
+    "price": 892
+  },
+  {
+    "name": "CORN FLOUR (CHOLA MAAVU) - 500GM",
+    "price": 556
+  },
+  {
+    "name": "BAJI & BONDA MIX - 500GM",
+    "price": 856
+  },
+  {
+    "name": "BAJI & BONDA MIX - 250GM",
+    "price": 788
+  },
+  {
+    "name": "WHEAT FLOUR (KOTHUMAI MAAVU) - 500GM",
+    "price": 209
+  },
+  {
+    "name": "SPROUTED WHEAT  FLOUR (MULAIKATTIYA KOTHUMAI MAAVU)  - 500GM",
+    "price": 798
+  },
+  {
+    "name": "SPROUTED WHEAT FLOUR (MULAIKATTIYA KOTHUMAI MAAVU) - 1KG",
+    "price": 960
+  },
+  {
+    "name": "BLACK URAD DHAL PORRIDGE (KARUPU ULUNDHU KANJI) MIX - 250GM",
+    "price": 459
+  },
+  {
+    "name": "SESAME FLOUR (ELLU MAAVU) DOSAI MIX - 250GM",
+    "price": 365
+  },
+  {
+    "name": "GREEN GRAM FLOUR (PAASI PAYIRU MAAVU) - 250GM",
+    "price": 580
+  },
+  {
+    "name": "RICE FLOUR  (ARISI MAAVU) - 500GM",
+    "price": 609
+  },
+  {
+    "name": "RICE FLOUR (ARISI MAAVU) -  250GM",
+    "price": 308
+  },
+  {
+    "name": "MILLET (SIRUTHAANIYA) DOSA MIX - 500GM",
+    "price": 997
+  },
+  {
+    "name": "SPROUTED CORN FLOUR (MULAIKATTIYA CHOLAM MAAVU) - 250GM",
+    "price": 671
+  },
+  {
+    "name": "RAGI CHOCOLATE MALT-100GM",
+    "price": 377
+  },
+  {
+    "name": "MILLET (SIRUTHAANIYA) DOSA MIX - 250GM",
+    "price": 429
+  },
+  {
+    "name": "SPROUTED BLACK CHANNA  FLOUR (MULAIKATTIYA KARUPPU SUNDAL MAAVU) - 250GM",
+    "price": 296
+  },
+  {
+    "name": "F2B HEALTH MIX  (SATTHU MAAVU) - 500G",
+    "price": 654
+  },
+  {
+    "name": "SPROUTED LITTLE FINGER  FLOUR (MULAIKATTIYA RAGI MAAVU)- 500GM",
+    "price": 100
+  },
+  {
+    "name": "SPROUTED  PEARLMILLET  FLOUR (MULAIKATTIYA KAMBU MAAVU) - 250GM",
+    "price": 379
+  },
+  {
+    "name": "SPROUTED  PEARLMILLET  FLOUR (MULAIKATTIYA KAMBU MAAVU) - 500GM",
+    "price": 784
+  },
+  {
+    "name": "FOXTAIL (THINAI) VENPONGAL MIX - 250GM",
+    "price": 276
+  },
+  {
+    "name": "RAGI  FLOUR (KELVARAGU MAAVU) - 500GM",
+    "price": 259
+  },
+  {
+    "name": "RED SORGUM FLOUR (SIVAPU CHOLAM MAAVU) ",
+    "price": 513
+  },
+  {
+    "name": "BENGAL GRAM (KADALAI MAAVU) (UNPLOISHED) - 250GM",
+    "price": 768
+  },
+  {
+    "name": "BENGAL GRAM (KADALAI MAAVU) (UNPLOISHED)- 500GM",
+    "price": 673
+  },
+  {
+    "name": "MULTIMILLET (SIRUTHANIYA) CHAPATHI FLOUR - 1KG",
+    "price": 900
+  },
+  {
+    "name": "LITTLE MILLET (SAAMAI) DOSA FLOUR - 500GM",
+    "price": 556
+  },
+  {
+    "name": "BRIDEGROOM (MAPPILAI SAMBA) DOSA FLOUR - 500GM",
+    "price": 203
+  },
+  {
+    "name": "BARNYARD (KUTHURAIVALI) DOSA READY MIX - 500GM",
+    "price": 893
+  },
+  {
+    "name": "PROSO MILLET (PANI VARAGU) PANIYARAM READY MIX - 500GM",
+    "price": 794
+  },
+  {
+    "name": "SPROUTED HORSE GRAM FLOUR (MULAIKATTIYA KOLLU MAAVU) - 250GM",
+    "price": 259
+  },
+  {
+    "name": "HEALTH MIX  (SATTHU MAAVU) - 500G (AMUTHA)",
+    "price": 192
+  },
+  {
+    "name": "SESAME (ELLU MAAVU) DOSAI MIX - 500GM",
+    "price": 371
+  },
+  {
+    "name": "TRIAL PACK",
+    "price": 262
+  },
+  {
+    "name": "FLUFFY PADS (JUMBO PACK) - XXL",
+    "price": 174
+  },
+  {
+    "name": "FLUFFY PADS (JUMBO)- XL",
+    "price": 966
+  },
+  {
+    "name": "MATERNITY PADS - L",
+    "price": 762
+  },
+  {
+    "name": "ADULT DIAPERS - XL",
+    "price": 755
+  },
+  {
+    "name": "SWEAT PADS",
+    "price": 463
+  },
+  {
+    "name": "FLUFFY PADS - L",
+    "price": 699
+  },
+  {
+    "name": "FLUFFY PADS (JUMBO MIX) - XL + XXL",
+    "price": 463
+  },
+  {
+    "name": "SLIMMY PADS - XXL",
+    "price": 356
+  },
+  {
+    "name": "SLIMMY PADS - XL",
+    "price": 753
+  },
+  {
+    "name": "PANTY LINERS",
+    "price": 648
+  },
+  {
+    "name": "FLUFFY PADS - XXXL",
+    "price": 393
+  },
+  {
+    "name": "FLUFFY PADS - XL",
+    "price": 221
+  },
+  {
+    "name": "FLUFFY PADS - XXL",
+    "price": 308
+  },
+  {
+    "name": "MATERNITY PADS - M",
+    "price": 896
+  },
+  {
+    "name": "ADULT DIAPER - L",
+    "price": 288
+  },
+  {
+    "name": "MATERNITY PADS - XL",
+    "price": 586
+  },
+  {
+    "name": "TRAIL PAD",
+    "price": 110
+  },
+  {
+    "name": "GREEN CAPSICUM (KUDAI MILAGAI)",
+    "price": 638
+  },
+  {
+    "name": "LADY'S FINGER (VENDAIKAI)",
+    "price": 972
+  },
+  {
+    "name": "RAW MANGO (MAANGAI)",
+    "price": 748
+  },
+  {
+    "name": "BEETROOT",
+    "price": 113
+  },
+  {
+    "name": "KOHLRABI (NOOKAL)",
+    "price": 332
+  },
+  {
+    "name": "RADDISH (MULLANGI)",
+    "price": 375
+  },
+  {
+    "name": "BEANS",
+    "price": 912
+  },
+  {
+    "name": "IVY GUARD (KOVAI KAI)",
+    "price": 591
+  },
+  {
+    "name": "SWEET POTATO (SAKKARAI VALLI KILANGU)",
+    "price": 699
+  },
+  {
+    "name": "CHOW CHOW",
+    "price": 205
+  },
+  {
+    "name": "POTATO (URULAI) (AGRA)",
+    "price": 230
+  },
+  {
+    "name": "POTATO (URULAI) (OOTY)",
+    "price": 840
+  },
+  {
+    "name": "ORGANIC CUCUMBER (VELLARI )",
+    "price": 327
+  },
+  {
+    "name": "AMLA (NELLI KAI)",
+    "price": 999
+  },
+  {
+    "name": "BROADBEANS (AVARAI)",
+    "price": 912
+  },
+  {
+    "name": "SNAKE GUARD (PUDALANGAI)",
+    "price": 535
+  },
+  {
+    "name": "LEMON  (ELUMICHAI)",
+    "price": 937
+  },
+  {
+    "name": "GREEN CHILLI (PACHAI MILAGAI)",
+    "price": 413
+  },
+  {
+    "name": "BRINJAL (KATHIRI KAI)",
+    "price": 347
+  },
+  {
+    "name": "CARROT ",
+    "price": 973
+  },
+  {
+    "name": "ONION (PERIYA VENGAYAM)",
+    "price": 650
+  },
+  {
+    "name": "SMALL ONION (CHINNA VENGAYAM)",
+    "price": 286
+  },
+  {
+    "name": "GINGER (INJI)",
+    "price": 716
+  },
+  {
+    "name": "TOMATO  (NATTU THAKKALI)",
+    "price": 913
+  },
+  {
+    "name": "COLOCASIA (CHEPA KELANGU)",
+    "price": 448
+  },
+  {
+    "name": "CORIANDER LEAF (KOTTHAMALI KATTU)",
+    "price": 249
+  },
+  {
+    "name": "MINT (PUDINA KATTU)",
+    "price": 863
+  },
+  {
+    "name": "CABBAGE (MUTTAI KOSE)",
+    "price": 688
+  },
+  {
+    "name": "BOTTLE GUARD (SURAI KAI)",
+    "price": 655
+  },
+  {
+    "name": "RIDGE GUARD",
+    "price": 949
+  },
+  {
+    "name": "SPINACH (KEERAI)",
+    "price": 188
+  },
+  {
+    "name": "PLANTAIN (VALAI KAI)",
+    "price": 758
+  },
+  {
+    "name": "PLANTAIN STEM (VALAI THANDU)",
+    "price": 304
+  },
+  {
+    "name": "PLANTAIN FLOWER (VAALAI POO)",
+    "price": 472
+  },
+  {
+    "name": "COCONUT (THENGAI)",
+    "price": 617
+  },
+  {
+    "name": "MUSHROOM (KALAN) (BUTTON)",
+    "price": 255
+  },
+  {
+    "name": "VELD GRAPE (PIRANDAI)",
+    "price": 443
+  },
+  {
+    "name": "DRUM STICK (MURUNGAI KAI)",
+    "price": 697
+  },
+  {
+    "name": "BITTER GUARD (PAVA KAI)",
+    "price": 152
+  },
+  {
+    "name": "IVY GUARD (PARUVAL KOVAI KAI)",
+    "price": 174
+  },
+  {
+    "name": "GREEN PEAS (PACHAI PATTANI)",
+    "price": 112
+  },
+  {
+    "name": "ALVALI KELANGU (MARAVALLI KILANGU)",
+    "price": 215
+  },
+  {
+    "name": "CAULIFLOWER",
+    "price": 145
+  },
+  {
+    "name": "BROCOLLI",
+    "price": 755
+  },
+  {
+    "name": "SUKKINI VELLARI ",
+    "price": 203
+  },
+  {
+    "name": "SWEET CORN",
+    "price": 300
+  },
+  {
+    "name": "YELLOW PUMPKIN (MANJAL POOSANI KAI)",
+    "price": 353
+  },
+  {
+    "name": "ELEPHANT YAM (SENAI KILANGU)",
+    "price": 158
+  },
+  {
+    "name": "COLOR CAPSICUM (KUDAI MILAGAI)",
+    "price": 853
+  },
+  {
+    "name": "TOMATO (BANGALORE THAKKALI)",
+    "price": 677
+  },
+  {
+    "name": "CLUSTER BEAN (KOTTHAVARANGAI)",
+    "price": 597
+  },
+  {
+    "name": "DRY STRAWBERRY ",
+    "price": 600
+  },
+  {
+    "name": "DRY PINEAPPLE",
+    "price": 498
+  },
+  {
+    "name": "DRY KIWI",
+    "price": 519
+  },
+  {
+    "name": "DRY PLUMS",
+    "price": 689
+  },
+  {
+    "name": "DRY CHERRY",
+    "price": 368
+  },
+  {
+    "name": "DRY CRANBERRY",
+    "price": 784
+  },
+  {
+    "name": "DRY AMLA (NELLI)",
+    "price": 438
+  },
+  {
+    "name": "DRY FIG (ATTHI)",
+    "price": 319
+  },
+  {
+    "name": "PAPAYA (PAPPALI)",
+    "price": 201
+  },
+  {
+    "name": "BUTTER FRUIT  (AVACODO) ",
+    "price": 375
+  },
+  {
+    "name": "ELAKKI (BANANA)",
+    "price": 974
+  },
+  {
+    "name": "POOVAN (BANANA) ",
+    "price": 763
+  },
+  {
+    "name": "RED BANANA (SEVAALAI)",
+    "price": 976
+  },
+  {
+    "name": "HILL BANANA (MALAI VAALAI)",
+    "price": 454
+  },
+  {
+    "name": "KARPOORAVALLI (THEEN VAALAI)",
+    "price": 540
+  },
+  {
+    "name": "POMEGRANATE (MAADHULAI)",
+    "price": 466
+  },
+  {
+    "name": "ORANGE (MALTA )",
+    "price": 157
+  },
+  {
+    "name": "SWEET LIME (SAATHUKUDI)",
+    "price": 343
+  },
+  {
+    "name": "GUAVA (KOYYA)",
+    "price": 871
+  },
+  {
+    "name": "INDIAN APPLE",
+    "price": 974
+  },
+  {
+    "name": "ROYAL APPLE",
+    "price": 460
+  },
+  {
+    "name": "GREEN APPLE",
+    "price": 977
+  },
+  {
+    "name": "MUSKMELON (MULAM PALAM)",
+    "price": 917
+  },
+  {
+    "name": "GREEN GRAPES  (PACHAI THIRATCHAI)",
+    "price": 561
+  },
+  {
+    "name": "PANEER GRAPES (KARUPPU THIRATCHAI )",
+    "price": 310
+  },
+  {
+    "name": "NENDRAN BANANA",
+    "price": 555
+  },
+  {
+    "name": "PINEAPPLE (ANNASI)",
+    "price": 271
+  },
+  {
+    "name": "WATERMELON (DHARBOOSINI)",
+    "price": 805
+  },
+  {
+    "name": "KAMALA ORANGE",
+    "price": 697
+  },
+  {
+    "name": "KIWI",
+    "price": 386
+  },
+  {
+    "name": "STRAWBERRY",
+    "price": 321
+  },
+  {
+    "name": "COUNTRY EGG (NAATU KOLI MUTTAI)",
+    "price": 628
+  },
+  {
+    "name": "HILL GARLIC (MALAI POONDU)",
+    "price": 464
+  },
+  {
+    "name": "ELAKKI",
+    "price": 100
+  },
+  {
+    "name": "AK TETRA BUTTERMILK PLAIN -200ML",
+    "price": 731
+  },
+  {
+    "name": "AK TETRA  BUTTERMILK SPICED - 200ML",
+    "price": 371
+  },
+  {
+    "name": "AK  PACKET BUTTERMILK SPICED - 200ML",
+    "price": 496
+  },
+  {
+    "name": "AK  PACKET CURD - 200G",
+    "price": 229
+  },
+  {
+    "name": "AK A2  PACKET CURD - 500G",
+    "price": 249
+  },
+  {
+    "name": "AK PACKET BUTTERMILK PLAIN - 200ML",
+    "price": 211
+  },
+  {
+    "name": "AK BOX CURD - 200G",
+    "price": 160
+  },
+  {
+    "name": "AK BOX CURD - 400G",
+    "price": 864
+  },
+  {
+    "name": "AK BOX  CURD - 1KG",
+    "price": 785
+  },
+  {
+    "name": "AK PROBIOTIC PACKET  CURD - 500G",
+    "price": 803
+  },
+  {
+    "name": "AK A2 COW MILK PAST - 500ML",
+    "price": 576
+  },
+  {
+    "name": "AK COW MILK PAST - 500ML",
+    "price": 537
+  },
+  {
+    "name": "AK MALAI PANEER",
+    "price": 244
+  },
+  {
+    "name": "JOMZAN  BLACK DATES  (UNPACKED)",
+    "price": 869
+  },
+  {
+    "name": "MORINGA LEAF POWDER (MURUNGAI ILAI  PODI) - 100GM",
+    "price": 821
+  },
+  {
+    "name": "GARLIC POWDER (POONDU PODI) -100GM ",
+    "price": 693
+  },
+  {
+    "name": "GARLIC (NAATU POONDU)  ",
+    "price": 749
+  },
+  {
+    "name": "GARLIC (POONDU) THOKKU",
+    "price": 700
+  },
+  {
+    "name": "DRY GINGER PALM JAGGERY  (SUKKU KARUPATTI)",
+    "price": 315
+  },
+  {
+    "name": "MUDAKATTHAN THOKKU - 200GM",
+    "price": 423
+  },
+  {
+    "name": "ENERGY BALLS - 150 GM",
+    "price": 907
+  },
+  {
+    "name": "PISTA GREEN - 100G",
+    "price": 433
+  },
+  {
+    "name": "ALGERIAN BROWN DATES (UNPACKED)",
+    "price": 407
+  },
+  {
+    "name": "BUTTER UNSALTED  (VENNAI)  - 100GM",
+    "price": 970
+  },
+  {
+    "name": "MUMTAZ FIG PACKET - 400G (JUICE & MILK  MIX)",
+    "price": 997
+  },
+  {
+    "name": "MIXED DRY FRIUTS BOX",
+    "price": 460
+  },
+  {
+    "name": "HERBAL MOSQUITO REPELLENT INCENSE STICKS",
+    "price": 233
+  },
+  {
+    "name": "SMALL ELEPHANT YAM (PIDIKARANAI) ",
+    "price": 372
+  },
+  {
+    "name": "COW GHEE (PASU NEI) - 200 ML ",
+    "price": 530
+  },
+  {
+    "name": "DRY CHILLI (VARA MILAGAI) - 200G",
+    "price": 811
+  },
+  {
+    "name": "PALM JAGGERY (PANA KARUPATTI)",
+    "price": 772
+  },
+  {
+    "name": "HIMALAYAN SALT POWDER  (INDHU UPPU THOOL) - 500G",
+    "price": 638
+  },
+  {
+    "name": "DRY GINGER (SUKKU)",
+    "price": 341
+  },
+  {
+    "name": "DRY APRICOT -  200G",
+    "price": 753
+  },
+  {
+    "name": "COW BUTTER  (PASU VENNAI) - 250G",
+    "price": 918
+  },
+  {
+    "name": "GROUNDNUT  SEED (NAATU NILA KADALAI) -250 GM",
+    "price": 982
+  },
+  {
+    "name": "TURMERIC POWDER (MANJAL THOOL ) - 100 GM ",
+    "price": 452
+  },
+  {
+    "name": "SESAME BALLS (ELLU URUNDAI) - 100GM ",
+    "price": 140
+  },
+  {
+    "name": "01 LW BROWN 1/4",
+    "price": 366
+  },
+  {
+    "name": "02 LW BROWN",
+    "price": 691
+  },
+  {
+    "name": "03 LW BROWN",
+    "price": 443
+  },
+  {
+    "name": "04 APPLE BROWN",
+    "price": 480
+  },
+  {
+    "name": "05 LW BROWN",
+    "price": 169
+  },
+  {
+    "name": "06 LW BROWN",
+    "price": 790
+  },
+  {
+    "name": "07 LW BROWN",
+    "price": 299
+  },
+  {
+    "name": "08 (1/4NO) LUDO(S)",
+    "price": 644
+  },
+  {
+    "name": "09 (1/2 NO) LUDO(S)",
+    "price": 541
+  },
+  {
+    "name": "10 HANDI",
+    "price": 979
+  },
+  {
+    "name": "11 HANDI",
+    "price": 322
+  },
+  {
+    "name": "12 MUSHAL HANDI",
+    "price": 517
+  },
+  {
+    "name": "13 SMILE JAR(M)",
+    "price": 503
+  },
+  {
+    "name": "14 SMILE JAR(BIG)",
+    "price": 239
+  },
+  {
+    "name": "15 BORA(SMALL)",
+    "price": 898
+  },
+  {
+    "name": "16 BORA(MEDIUM)",
+    "price": 877
+  },
+  {
+    "name": "17 BORA(BIG)",
+    "price": 981
+  },
+  {
+    "name": "18 MATKA (S)",
+    "price": 305
+  },
+  {
+    "name": "19 MATKA (M)",
+    "price": 852
+  },
+  {
+    "name": "20 MATKA (B)",
+    "price": 318
+  },
+  {
+    "name": "21 MAT BAR(1.5KG)",
+    "price": 423
+  },
+  {
+    "name": "22 MAT BAR(2 KG)",
+    "price": 717
+  },
+  {
+    "name": "23 BROAD MOUTH JAR",
+    "price": 807
+  },
+  {
+    "name": "24 COLOUR JAR(2KG)",
+    "price": 686
+  },
+  {
+    "name": "25 JILABI HANDI",
+    "price": 611
+  },
+  {
+    "name": "26 JILABI (S)",
+    "price": 276
+  },
+  {
+    "name": "27 JILABI (M)",
+    "price": 415
+  },
+  {
+    "name": "28 JILABI (B)",
+    "price": 964
+  },
+  {
+    "name": "30 NISSAN JAR",
+    "price": 864
+  },
+  {
+    "name": "31 HANDI + MATHINI",
+    "price": 438
+  },
+  {
+    "name": "32 JEERA JAR(NO. 02)",
+    "price": 819
+  },
+  {
+    "name": "33 SQUARE NO. 12",
+    "price": 154
+  },
+  {
+    "name": "34 SQUARE NO. 17",
+    "price": 196
+  },
+  {
+    "name": "35 SQUARE NO. 25",
+    "price": 835
+  },
+  {
+    "name": "36 SQUARE NO. 26",
+    "price": 652
+  },
+  {
+    "name": "37 SQUARE NO. 13",
+    "price": 952
+  },
+  {
+    "name": "38 SQUARE NO. 14",
+    "price": 275
+  },
+  {
+    "name": "39 SQUARE NO.1",
+    "price": 853
+  },
+  {
+    "name": "40 MUSHAL SQUARE(S)",
+    "price": 103
+  },
+  {
+    "name": "41 MUSHAL SQUARE(M)",
+    "price": 935
+  },
+  {
+    "name": "42 MUSHAL SQUARE 1KG",
+    "price": 520
+  },
+  {
+    "name": "43 MUSHAL SQUARE 2KG",
+    "price": 494
+  },
+  {
+    "name": "44 ROUND JAR (S)",
+    "price": 770
+  },
+  {
+    "name": "45 ROUND JAR (M)",
+    "price": 535
+  },
+  {
+    "name": "46 ROUND JAR (1KG)",
+    "price": 932
+  },
+  {
+    "name": "47 ROUND JAR (2 KG)",
+    "price": 372
+  },
+  {
+    "name": "48 COFFEE SET",
+    "price": 578
+  },
+  {
+    "name": "49 OIL CAN (S)",
+    "price": 277
+  },
+  {
+    "name": "50 OIL CAN (M)",
+    "price": 470
+  },
+  {
+    "name": "51 OIL CAN (B)",
+    "price": 858
+  },
+  {
+    "name": "52 PEPPER SALT",
+    "price": 487
+  },
+  {
+    "name": "53 SPOON REST",
+    "price": 155
+  },
+  {
+    "name": "54 SMALL BASKET",
+    "price": 507
+  },
+  {
+    "name": "55 MEDIUM BASKET",
+    "price": 375
+  },
+  {
+    "name": "56 CHINESE JAR(s)",
+    "price": 792
+  },
+  {
+    "name": "57 CHINESE JAR(M)",
+    "price": 677
+  },
+  {
+    "name": "58 CHINESE JAR(B)",
+    "price": 793
+  },
+  {
+    "name": "59 1 KG LIVA JAR",
+    "price": 322
+  },
+  {
+    "name": "60 SUN SHINE BABY SET",
+    "price": 492
+  },
+  {
+    "name": "61 HAND WASH",
+    "price": 798
+  },
+  {
+    "name": "64 CHUTNEY KATTORI",
+    "price": 782
+  },
+  {
+    "name": "65 CC NO. 1",
+    "price": 508
+  },
+  {
+    "name": "66 CC NO. 2",
+    "price": 467
+  },
+  {
+    "name": "67 CC NO. 3",
+    "price": 320
+  },
+  {
+    "name": "68 CC NO. 4",
+    "price": 736
+  },
+  {
+    "name": "69 CC NO. 5",
+    "price": 528
+  },
+  {
+    "name": "70 MUGHAL SQUARE JAR(1*12)",
+    "price": 414
+  },
+  {
+    "name": "71 MUGHAL SQUARE JAR(1*8)",
+    "price": 805
+  },
+  {
+    "name": "72 MUGHAL SQUARE JAR(1*4)",
+    "price": 201
+  },
+  {
+    "name": "73 2 PCS PICKEL",
+    "price": 821
+  },
+  {
+    "name": "74 2PCS W/MAT",
+    "price": 535
+  },
+  {
+    "name": "75 3PCS W/MAT",
+    "price": 213
+  },
+  {
+    "name": "76 WATER JUG(NO. 16)",
+    "price": 131
+  },
+  {
+    "name": "77 WATER JUG(NO. 09)",
+    "price": 698
+  },
+  {
+    "name": "78 FLING",
+    "price": 402
+  },
+  {
+    "name": "79 OCCASSION",
+    "price": 186
+  },
+  {
+    "name": "80 ROYAL PARADISE",
+    "price": 725
+  },
+  {
+    "name": "81 DRINK HUB",
+    "price": 304
+  },
+  {
+    "name": "82 CHAI BAR",
+    "price": 150
+  },
+  {
+    "name": "83 INVITATION",
+    "price": 137
+  },
+  {
+    "name": "84 PLAIN TAWA",
+    "price": 825
+  },
+  {
+    "name": "85 JALI TAWA",
+    "price": 363
+  },
+  {
+    "name": "86 10 INCH PLATE",
+    "price": 131
+  },
+  {
+    "name": "87 8 INCH PLATE",
+    "price": 583
+  },
+  {
+    "name": "88 DH 3 LITRE",
+    "price": 507
+  },
+  {
+    "name": "89 DH 4 LITRE",
+    "price": 316
+  },
+  {
+    "name": "90 H 3PCS",
+    "price": 659
+  },
+  {
+    "name": "91 M 3PCS",
+    "price": 202
+  },
+  {
+    "name": "92 TRAY JUG SET",
+    "price": 239
+  },
+  {
+    "name": "93 SMALL FRY PAN",
+    "price": 821
+  },
+  {
+    "name": "94 LARGE FRY PAN",
+    "price": 666
+  },
+  {
+    "name": "95 COOKER 3 LITRE",
+    "price": 214
+  },
+  {
+    "name": "96 MATKA 11 LIT",
+    "price": 917
+  },
+  {
+    "name": "97 P3 WITHOUT (ST)",
+    "price": 659
+  },
+  {
+    "name": "98 P3 WITH STAND",
+    "price": 434
+  },
+  {
+    "name": "99 JUG",
+    "price": 271
+  },
+  {
+    "name": "100 G6",
+    "price": 562
+  },
+  {
+    "name": "101 C6",
+    "price": 236
+  },
+  {
+    "name": "102 8D02 MUG",
+    "price": 293
+  },
+  {
+    "name": "103 HANDI TERROCOTA(B)",
+    "price": 121
+  },
+  {
+    "name": "104 HANDI (S)(T)",
+    "price": 151
+  },
+  {
+    "name": "105 GEORGEOUS",
+    "price": 925
+  },
+  {
+    "name": "106 EVERYDAY",
+    "price": 111
+  },
+  {
+    "name": "107 CAMPTY",
+    "price": 593
+  },
+  {
+    "name": "108 SEASON TREAT",
+    "price": 168
+  },
+  {
+    "name": "109 SWEET SASSY",
+    "price": 290
+  },
+  {
+    "name": "110 GREEN TEA",
+    "price": 677
+  },
+  {
+    "name": "111 HAUDI 5 LIT",
+    "price": 746
+  },
+  {
+    "name": "112 D.H.3",
+    "price": 933
+  },
+  {
+    "name": "113 D.H.2.5",
+    "price": 314
+  },
+  {
+    "name": "114 WATER DISPENSER",
+    "price": 744
+  },
+  {
+    "name": "FOXTAIL (THINAI) RIBBON PAKODA  - 200 GM",
+    "price": 938
+  },
+  {
+    "name": "MAPILLAI SAMBA AVAL MIXER - 200 GM",
+    "price": 317
+  },
+  {
+    "name": "KODO MILLET (VARAGU) MIXER  200 GM",
+    "price": 526
+  },
+  {
+    "name": "MAPILLAI SAMBA MURUKKU 200 GM",
+    "price": 278
+  },
+  {
+    "name": "LITTLE MILLET (SAAMAI) MURUKKU 200 GM",
+    "price": 520
+  },
+  {
+    "name": "COCONUT (THENGAI) MILK MURUKKU - 200 GM",
+    "price": 616
+  },
+  {
+    "name": "LITTLE MILLET (SAAMAI) GARLIC  MURUKKU - 200 GM",
+    "price": 170
+  },
+  {
+    "name": "KODO  MILLET (VARAGU) MURUKKU 200 GM",
+    "price": 241
+  },
+  {
+    "name": "FOXTAIL MILLET (THINAI)  MURUKKU 200 GM",
+    "price": 855
+  },
+  {
+    "name": "PEARL MILLET (KAMBU) MIXTURE - 200 GM",
+    "price": 940
+  },
+  {
+    "name": "SOYA CHUNKS (Meal Maker) - 250 gm (Small)",
+    "price": 520
+  },
+  {
+    "name": "MIXED CHOCOLATES - 100 GM",
+    "price": 885
+  },
+  {
+    "name": "Big Brinjal (OODHA KATHIRI KAI)",
+    "price": 292
+  },
+  {
+    "name": "Dragon Fruit ",
+    "price": 619
+  },
+  {
+    "name": "MAPILLAI SAMBA RICE ",
+    "price": 997
+  },
+  {
+    "name": "KODO MILLET (VARAGU) (UNPOLISHED) - 500 GM",
+    "price": 608
+  },
+  {
+    "name": "VADA DHAL (PARUPPU) - 250 GM",
+    "price": 859
+  },
+  {
+    "name": "JAMUN HONEY - 150GM",
+    "price": 873
+  },
+  {
+    "name": "SUNFLOWER (SOORIYAGANDHI) HONEY - 150GM ",
+    "price": 962
+  },
+  {
+    "name": "MUSTARD (KADUGU) HONEY - 150 GM",
+    "price": 396
+  },
+  {
+    "name": "TULSI HONEY - 150 GM",
+    "price": 426
+  },
+  {
+    "name": "ACACIA (KARUVELA ) HONEY  - 150 GM",
+    "price": 994
+  },
+  {
+    "name": "SUN DRIED BALLS (THALIPPU VADAGAM) - 100GM",
+    "price": 818
+  },
+  {
+    "name": "EMPEROR'S (KARUPPU KAVUNI) RICE (1 KG)",
+    "price": 283
+  },
+  {
+    "name": "HERBAL COUNTRY SUGAR (MOOLIGAI NATTU SARKARAI) (250GM)",
+    "price": 172
+  },
+  {
+    "name": "Laptop",
+    "price": 465
+  },
+  {
+    "name": "KODO MILLET (VARAGU) SEMIYA - 180GM",
+    "price": 994
+  },
+  {
+    "name": "DRUMSTICK (MURUNGAI) SEMIYA - 180GM ",
+    "price": 481
+  },
+  {
+    "name": "BARNYARD (KUTHIRAI VAALI) VERMICELLI",
+    "price": 683
+  },
+  {
+    "name": "AVACADO ",
+    "price": 889
+  },
+  {
+    "name": "WHITE POHA (VELLAI AVAL)  - 250GM",
+    "price": 135
+  },
+  {
+    "name": "RED POHA (SIVAPPU AVAL) - 250GM",
+    "price": 132
+  },
+  {
+    "name": "WHITE SORAHUM (VELLAI SOLAM)  RAVA - 400GM",
+    "price": 721
+  },
+  {
+    "name": "KODO (VARAGU) MILLET RAVA - 400GM",
+    "price": 377
+  },
+  {
+    "name": "MILLET CHIKKIES (SIRUTHAANIYAM)  - 70GM",
+    "price": 966
+  },
+  {
+    "name": "BARNYARD (KUTHIRAI VAALI)  MILLET COOKIES - 100GM",
+    "price": 673
+  },
+  {
+    "name": "CUSTARD APPLE (SEETHA PALAM)",
+    "price": 657
+  },
+  {
+    "name": "KARUPPU KAVUNI DOSAI READY MIX - 500GM",
+    "price": 206
+  },
+  {
+    "name": "vilampalam",
+    "price": 738
+  },
+  {
+    "name": "Mini apple",
+    "price": 832
+  },
+  {
+    "name": "PEARS FRUIT (BAYRI KAI)",
+    "price": 592
+  },
+  {
+    "name": "TURMERIC POWDER  (MANJAL THOOL) - 200 gm ",
+    "price": 658
+  },
+  {
+    "name": "Cocoa Lip Balm (HERBAL) ",
+    "price": 509
+  },
+  {
+    "name": "Rose and Mulethi Face pack (HERBAL)",
+    "price": 783
+  },
+  {
+    "name": "ROSE & SAFFRON FACE PACK (HERBAL) - 100GM",
+    "price": 849
+  },
+  {
+    "name": "SAFFRON GEL (HERBAL) - 50 GM",
+    "price": 137
+  },
+  {
+    "name": "COCOA FACE PACK  (HERBAL)  - 50 GM",
+    "price": 741
+  },
+  {
+    "name": "ROSE WATER (HERBAL) -  100ml",
+    "price": 405
+  },
+  {
+    "name": "KUPAIMENI (HERBAL)   SOAP (F2B) - 100 GM",
+    "price": 313
+  },
+  {
+    "name": "MANJISTHA  (HERBAL) SOAP (F2B) 100 GM",
+    "price": 346
+  },
+  {
+    "name": "VETIVER  (HERBAL)  SOAP (F2B) 100 GM",
+    "price": 476
+  },
+  {
+    "name": "ROSE (HERBAL)  SOAP (F2B) 100 GM",
+    "price": 304
+  },
+  {
+    "name": "AVARAMPOO (HERBAL)  SOAP (F2B) 100 GM",
+    "price": 173
+  },
+  {
+    "name": "KASTURI MANJAL (HERBAL) SOAP (F2B) 100 GM",
+    "price": 785
+  },
+  {
+    "name": "ORANGE (HERBAL)  SOAP (F2B) 100 GM",
+    "price": 346
+  },
+  {
+    "name": "CHARCOAL  SOAP (F2B) 100 GM",
+    "price": 809
+  },
+  {
+    "name": "PAPAYA (HERBAL) SOAP (F2B) 100 GM",
+    "price": 831
+  },
+  {
+    "name": "LOOFAH (PEERKANGAI NAAR)",
+    "price": 537
+  },
+  {
+    "name": "FRESH GROUNDNUT (PACHAKADALAI KAI)",
+    "price": 444
+  },
+  {
+    "name": "Paruval Ivy",
+    "price": 263
+  },
+  {
+    "name": "COUNTRY GARLIC ",
+    "price": 413
+  },
+  {
+    "name": "AK COW GHEE (PASU NEI)  - 490ML",
+    "price": 820
+  },
+  {
+    "name": "COUNTRY CASHEW NUT  (NAATU MUNDIRI)- 100 GM ",
+    "price": 794
+  },
+  {
+    "name": "PAASI PARUPPU (RAIN FALL YIELD) - 500GM",
+    "price": 137
+  },
+  {
+    "name": " NECTRAW (PADHANEER)  POT  - 180 ML",
+    "price": 860
+  },
+  {
+    "name": "AK CHEDDAR CHEESE SLICES 100 G",
+    "price": 581
+  },
+  {
+    "name": "Yellow Raisin (ULAR THIRATCHAI) -200 gm ",
+    "price": 242
+  },
+  {
+    "name": "RIDGE GOURD (PEERKAN KAI)",
+    "price": 195
+  },
+  {
+    "name": "WALNUT - 100 GM",
+    "price": 182
+  },
+  {
+    "name": "PASI PAYIRU (RAIN FALL YIELD) - 250 GM",
+    "price": 500
+  },
+  {
+    "name": " KASURI METHI  (VENTHAYA KEERAI) -25 GM",
+    "price": 331
+  },
+  {
+    "name": "SAPPAN WOOD  (PATHIMUGAM) - 50 GM",
+    "price": 882
+  },
+  {
+    "name": "LONG PEPPER  (THIPPILI)-  50gm",
+    "price": 649
+  },
+  {
+    "name": "BLACK RAISINS SEEDLESS (KARUPPU ULAR THIRATCHAI) - 250G",
+    "price": 393
+  },
+  {
+    "name": "SANDAL WOOD (SANDHANA KATTAI)",
+    "price": 152
+  },
+  {
+    "name": "CUMIN SEEDS  (SEERAGAM)- 200G",
+    "price": 310
+  },
+  {
+    "name": "MAKHANA (THAMARAI VIDHAI) - 100 gm",
+    "price": 242
+  },
+  {
+    "name": "SESAME OIL (PALM JAGGERY) (NALLENNAI) -  500ML",
+    "price": 274
+  },
+  {
+    "name": "SESAME OIL (PALM JAGGERY) (NALLENNAI) - 1L",
+    "price": 218
+  },
+  {
+    "name": "NEEM OIL  (VEPPENNAI) - 100ML",
+    "price": 988
+  },
+  {
+    "name": "MUDAKATHAN  PODI  - 100GM",
+    "price": 454
+  },
+  {
+    "name": "BUFFALO BUTTER (ERUMAI VENNAI)  - 250 GM",
+    "price": 701
+  },
+  {
+    "name": "WHEAT FLOUR (GOTHUMAI MAAVU) - 1KG",
+    "price": 100
+  },
+  {
+    "name": "BRIDEGROOM (MAPPILAI SAMBA) DOSA FLOUR - 250GM",
+    "price": 148
+  },
+  {
+    "name": "WHITE SOLAM POHA (VELLAI SOLAM AVAL) - 250GM ",
+    "price": 960
+  },
+  {
+    "name": "JUST MOP FLOOR CLEANER (500ML)",
+    "price": 648
+  },
+  {
+    "name": "NATURE DROP HERBAL DISHWASHER - 500ML",
+    "price": 887
+  },
+  {
+    "name": "Rosted almond",
+    "price": 754
+  },
+  {
+    "name": "BARNYARD FLOUR (KUTHIRAI VAALI MAAVU)",
+    "price": 820
+  },
+  {
+    "name": "EMPEROR'S (KARUPPU KAVUNI) RICE FLOUR  - 250 GM ",
+    "price": 223
+  },
+  {
+    "name": "LITTLE MILLET (SAAMAI) PONGAL MIX ",
+    "price": 526
+  },
+  {
+    "name": "KOVAI ILLAI KARUVEPILLAI THOKKU - 200GM",
+    "price": 592
+  },
+  {
+    "name": "PLANTAIN FLOWER (VAALAI POO) THOKKU - 200GM",
+    "price": 605
+  },
+  {
+    "name": "ELEPHANT FOOT YAM (KARUNAI KELANGU) - 200 GM",
+    "price": 244
+  },
+  {
+    "name": "TOMATO  (THAKKALI) THOKKU - 200GM ",
+    "price": 696
+  },
+  {
+    "name": "MANGO GINGER (MAA INJI) THOKKU - 200GM",
+    "price": 797
+  },
+  {
+    "name": "KASTHURI MANJAL - SH ",
+    "price": 376
+  },
+  {
+    "name": "MOSCUP",
+    "price": 504
+  },
+  {
+    "name": "PISTA CHOCOLATE",
+    "price": 235
+  },
+  {
+    "name": "STRAWBERRY CHOCOLATE",
+    "price": 164
+  },
+  {
+    "name": "SAPOTA",
+    "price": 321
+  },
+  {
+    "name": "SAPOTA ",
+    "price": 737
+  },
+  {
+    "name": "DARK CHOCOLATE",
+    "price": 801
+  },
+  {
+    "name": "SAMBAR CHILLI POWDER (KULAMBU MILAGAI THOOL) -100GM",
+    "price": 222
+  },
+  {
+    "name": "FIELD BEANS (MOCHAI AVARAI )",
+    "price": 700
+  },
+  {
+    "name": "INDIAN PENNYWORT (VALLARAI) POWDER - 50 GM",
+    "price": 417
+  },
+  {
+    "name": "CLOVE (KIRAMBU) -25gm",
+    "price": 856
+  },
+  {
+    "name": "PROSO  MILLET FLOUR (PANI VARAGU MAAVU) - 250 GM",
+    "price": 951
+  },
+  {
+    "name": "YELLOW CUCUMBER (DOSAKAI)",
+    "price": 685
+  },
+  {
+    "name": "PEARL MILLET (KAMBU) NOODLES - 175GM",
+    "price": 648
+  },
+  {
+    "name": "Crown Dates - 500GM",
+    "price": 119
+  },
+  {
+    "name": "FOX TAIL FLOUR (THINAI MAAVU) - 250GM",
+    "price": 485
+  },
+  {
+    "name": "FENUGREEK (VENTHAYAM) - 200GM",
+    "price": 239
+  },
+  {
+    "name": "COCONUT  POWDER (THENGAI  PODI) - 100 GM ",
+    "price": 757
+  },
+  {
+    "name": "EUCALYPTUS HONEY -  150 GM ",
+    "price": 891
+  },
+  {
+    "name": "EUCALYPTUS HONEY -  350 GM ",
+    "price": 334
+  },
+  {
+    "name": "TULSI HONEY- 350 GM",
+    "price": 800
+  },
+  {
+    "name": "JAMUN (NAVAL) HONEY - (350 GM)",
+    "price": 882
+  },
+  {
+    "name": "MILLATINO - 90 GM ",
+    "price": 710
+  },
+  {
+    "name": "FOXTAIL MILLET (THINAI) COOKIES - 100GM",
+    "price": 523
+  },
+  {
+    "name": "PINE APPLE CHOCOLATE",
+    "price": 482
+  },
+  {
+    "name": "RED RICE  FLOUR (SIVAPPU ARISI MAAVU) - 250 GM",
+    "price": 479
+  },
+  {
+    "name": "AK PIZZA CHEESE -  200g",
+    "price": 941
+  },
+  {
+    "name": "AK YOGURT MANGO 90 G",
+    "price": 739
+  },
+  {
+    "name": "AK YOGURT PLAIN 90 G",
+    "price": 727
+  },
+  {
+    "name": "AK  BUTTER ( SALTED) - 200g",
+    "price": 400
+  },
+  {
+    "name": "CASTOR OIL (VELAKKENNAI) - 100 ML ",
+    "price": 230
+  },
+  {
+    "name": "DESI PEARL FLOUR (NAATU KAMBU MAAVU) - 250 GM",
+    "price": 595
+  },
+  {
+    "name": "IDIYAPPAM FLOUR -  500GM",
+    "price": 739
+  },
+  {
+    "name": "SESAME OIL (SUGARCANE JAGGERY) - 500 ML",
+    "price": 670
+  },
+  {
+    "name": "SESAME OIL (SUGARCANE JAGGERY) - 1L",
+    "price": 156
+  },
+  {
+    "name": "BAY LEAF (BIRIYANI LEAF) (NON ORGANIC) - 20G",
+    "price": 795
+  },
+  {
+    "name": "PUFFED RICE (PORI) - 100 GM",
+    "price": 544
+  },
+  {
+    "name": "NATURAL MALISH OIL (KOVARSHINI) - 100ML",
+    "price": 533
+  },
+  {
+    "name": "FACIAL POWDER - 60GM",
+    "price": 332
+  },
+  {
+    "name": "TOOTH POWDER (KOVARSHINI) - 50GM",
+    "price": 728
+  },
+  {
+    "name": "KULIYAL POWDER - 100GM",
+    "price": 911
+  },
+  {
+    "name": "BAMBOO FIBRE BRISTLE (TOOTH BRUSH)",
+    "price": 776
+  },
+  {
+    "name": "CHARCOAL INFUSED BRISTLE (TOOTH BRUSH)",
+    "price": 893
+  },
+  {
+    "name": "KIDS BAMBOO TOOTH BRUSH (BLUE) ",
+    "price": 934
+  },
+  {
+    "name": "KIDS BAMBOO TOOTH BRUSH( PINK)",
+    "price": 934
+  },
+  {
+    "name": "RED GUAVA (SIVAPPU KOYYA)",
+    "price": 932
+  },
+  {
+    "name": "CUCUMBER COUNTRY (NAATU VELLARI)",
+    "price": 749
+  },
+  {
+    "name": "ROASTED PEANUT (VARUTTHA NILAKADALAI) - 100 GM ",
+    "price": 374
+  },
+  {
+    "name": "SH : WHOLE WHEAT FLOUR (GOTHUMAI MAAVU) - 1KG",
+    "price": 546
+  },
+  {
+    "name": "KUNGUMAM - 30GM",
+    "price": 842
+  },
+  {
+    "name": "DHOOP ( 40 GM)",
+    "price": 740
+  },
+  {
+    "name": "BAMBOO TONGUE CLEANER ",
+    "price": 227
+  },
+  {
+    "name": "BAMBOO TOOTH BRUSH ( BUY 2 GET 1)",
+    "price": 571
+  },
+  {
+    "name": "WHITE PUMPKIN (VELLAI POOSINI)",
+    "price": 770
+  },
+  {
+    "name": "RICE POHA (MAPILLAI SAMBA AVAL)   - 250GM",
+    "price": 492
+  },
+  {
+    "name": "TURMERIC POWDER  (MANJAL THOOL)- 130 GM ",
+    "price": 401
+  },
+  {
+    "name": "SMALL BEANS (KARAMANI)",
+    "price": 715
+  },
+  {
+    "name": "RAW TOMATO  (PACHA THAKKALI)",
+    "price": 585
+  },
+  {
+    "name": "TAMARIND  (PULI) -  250G",
+    "price": 252
+  },
+  {
+    "name": "TAMARIND (PULI) - 500G",
+    "price": 309
+  },
+  {
+    "name": "SANDALWOOD STONE  (SANDHANA KAL)",
+    "price": 340
+  },
+  {
+    "name": "WHEEL VADAGAM  - 100GM",
+    "price": 762
+  },
+  {
+    "name": " NECTRAW (PADHANEER)  BOTTLE  - 200 ML",
+    "price": 785
+  },
+  {
+    "name": " NECTRAW (PADHANEER)  BOTTLE  - 300 ML",
+    "price": 678
+  },
+  {
+    "name": "MORINGA (MURUNGAI) NOODLES  - 190GM",
+    "price": 365
+  },
+  {
+    "name": "HORSE GRAM (KOLLU) - 500GM",
+    "price": 723
+  },
+  {
+    "name": "MUFFINS ",
+    "price": 834
+  },
+  {
+    "name": "BRIDEGROOM(MAPPILAISAMBA) BROWNIE",
+    "price": 816
+  },
+  {
+    "name": "MINICREAM BUN",
+    "price": 296
+  },
+  {
+    "name": "MINI MUFFINS",
+    "price": 429
+  },
+  {
+    "name": "COOKIES",
+    "price": 360
+  },
+  {
+    "name": "HOMEMADE ICE CREAM",
+    "price": 779
+  },
+  {
+    "name": "PANJAGAVIYA VILAKKU (KOVARSHINI)",
+    "price": 802
+  },
+  {
+    "name": "TENDER COCONUT  (ILA NEER)",
+    "price": 316
+  },
+  {
+    "name": "SUGARCANE JUICE (KARUMBU PAAL)  POT",
+    "price": 924
+  },
+  {
+    "name": " NECTRAW (PADHANEER)  BOTTLE  - 1L",
+    "price": 404
+  },
+  {
+    "name": " GROUNDNUT (NAATU NILAKADALAI)  -  500G",
+    "price": 457
+  },
+  {
+    "name": "TINY PALM JAGGERY (KARUPATTI) (TINY BYTES) - 100G",
+    "price": 533
+  },
+  {
+    "name": "MUSTARD OIL  (KADUGU ENNAI) - 250 ML",
+    "price": 217
+  },
+  {
+    "name": "WHITE URAD DAL (MOTTU ULUNDHU) (RAINFALL YIELD) - 500g",
+    "price": 401
+  },
+  {
+    "name": "MANVILAKKU (DESIGN)",
+    "price": 574
+  },
+  {
+    "name": "MILLET HEALTH MIX (SIRUTHAANIYA SATTHU MAAVU)- 250GM ",
+    "price": 711
+  },
+  {
+    "name": "HEALTH MIX (SATTHU MAAVU) - 250G",
+    "price": 105
+  },
+  {
+    "name": "MILLET HEALTH MIX (SIRUTHAANIYA SATTHU MAAVU) -500G",
+    "price": 488
+  },
+  {
+    "name": "JUJUBE POWDER (ELANDHAI PODI)",
+    "price": 565
+  },
+  {
+    "name": "JUJUBE (ELANDHAI) SEED ",
+    "price": 553
+  },
+  {
+    "name": "JUJUBE (ELANDHAVADAI )SEEDLESS",
+    "price": 489
+  },
+  {
+    "name": "PANEER BITTER GUARD (SIRU PAAVA KAI)",
+    "price": 367
+  },
+  {
+    "name": "COCO NECTAR : 1L ",
+    "price": 783
+  },
+  {
+    "name": "NECT RAW ",
+    "price": 617
+  },
+  {
+    "name": "WHEAT NOODLES-175 G",
+    "price": 607
+  },
+  {
+    "name": "BRIDGE GROOM NOODLES - 180 G",
+    "price": 517
+  },
+  {
+    "name": "HORSE GRAM NOODLES - 180 GM",
+    "price": 182
+  },
+  {
+    "name": "BLACK RICE NOODLES 180G",
+    "price": 427
+  },
+  {
+    "name": "LITTLE MILLET NOODLES 180 G",
+    "price": 141
+  },
+  {
+    "name": "SUGARCANE JUICE (KARUMBU PAAL) POT DINE IN",
+    "price": 109
+  },
+  {
+    "name": "KAIKUTHAL RAW RICE",
+    "price": 279
+  },
+  {
+    "name": "NECTRAW (PADHANEER) POT - 90 ML",
+    "price": 918
+  },
+  {
+    "name": "Ginger candy",
+    "price": 217
+  },
+  {
+    "name": "COCONUT JAGGERY BALLS - 100G",
+    "price": 263
+  },
+  {
+    "name": "PEANUT CANDY (GRINDED) - 100G",
+    "price": 919
+  },
+  {
+    "name": "BLACK SESAME BALLS (100G)",
+    "price": 575
+  },
+  {
+    "name": "WHITE SESAME BALLS - 100G",
+    "price": 429
+  },
+  {
+    "name": "GROUNDNUT BALLS 100G",
+    "price": 771
+  },
+  {
+    "name": "SAYAN DATES BLACK ",
+    "price": 282
+  },
+  {
+    "name": "COTTON SEED MILK 150G",
+    "price": 611
+  }
+]

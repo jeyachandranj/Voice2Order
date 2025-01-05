@@ -8,15 +8,15 @@ const transcriptionSchema = new mongoose.Schema({
   products: [{
     name: {
       type: String,
-      required: true,
+      required: true, // The name of the product
     },
     quantity: {
       type: Number,
-      required: true,
+      required: true, // The quantity of the product
     },
     unit: {
       type: String,
-      required: true,
+      required: true, // The unit of the product
     }
   }]
 });

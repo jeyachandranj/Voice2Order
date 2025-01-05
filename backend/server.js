@@ -13,6 +13,8 @@ const cors = require('cors');
 const app = express();
 const port = 4000;
 app.use(cors("*"));
+app.use(express.json()); // Parse JSON bodies
+app.use(express.urlencoded({ extended: true })); 
 
 const upload = multer({ dest: 'uploads/' });
 
@@ -147,6 +149,34 @@ async function handleProductData(transcription) {
       console.error('Error saving data to database:', error);
     }
   }
+
+
+  app.put('/transcriptions/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { newProduct } = req.body;
+  
+      if (!newProduct || !newProduct.name) {
+        return res.status(400).send('Invalid product data.');
+      }
+  
+      // Append the new product to the products array
+      const updatedTranscription = await Transcription.findByIdAndUpdate(
+        id,
+        { $push: { products: newProduct } }, // Use $push to add to the array
+        { new: true }
+      );
+  
+      res.json(updatedTranscription);
+    } catch (error) {
+      console.error('Error updating transcription:', error);
+      res.status(500).send('Error updating transcription.');
+    }
+  });
+  
+  
+  
+  
   
 
 
