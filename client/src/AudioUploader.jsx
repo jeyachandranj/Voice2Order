@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import productList from './products.json';
 
@@ -9,17 +9,22 @@ const AudioUploader = () => {
   const [isUploading, setIsUploading] = useState(false);
   const [fetchTrigger, setFetchTrigger] = useState(false);
   const [matchedProducts, setMatchedProducts] = useState([]);
-  const [dropdownVisible, setDropdownVisible] = useState(false);
   const [orderId, setOrderId] = useState('');
+  const [selectedProductIndex, setSelectedProductIndex] = useState(null);
+  const [changeHistory, setChangeHistory] = useState([]);
+  const [showHistory, setShowHistory] = useState(false);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 });
 
-  // Handle file selection
+  const productNameRef = useRef(null);
+
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
     setError('');
     setProductData([]);
+    setChangeHistory([]);
   };
 
-  // Upload file
   const handleUpload = async () => {
     if (!selectedFile) {
       setError('Please select an audio file to upload.');
@@ -32,13 +37,10 @@ const AudioUploader = () => {
     try {
       setIsUploading(true);
       setError('');
-      const response = await axios.post('http://localhost:4000/transcribe', formData, {
+      await axios.post('http://localhost:4000/transcribe', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
-
-      // Trigger data fetch
       setFetchTrigger(true);
-      console.log('File uploaded successfully:', response.data);
     } catch (error) {
       console.error('Error uploading file:', error);
       setError('An error occurred while processing the audio file.');
@@ -47,17 +49,14 @@ const AudioUploader = () => {
     }
   };
 
-  // Fetch data using useEffect
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:4000/transcriptions');
         const data = response.data;
-
-        console.log('Fetched Data:', data);
         setProductData(data.products || []);
         setOrderId(data._id);
-        console.log('Order ID:', data._id);
+        setChangeHistory(data.changeHistory || []);
       } catch (error) {
         console.error('Error fetching data:', error);
         setError('An error occurred while fetching product data.');
@@ -70,45 +69,95 @@ const AudioUploader = () => {
     }
   }, [fetchTrigger]);
 
-  const handleMatchedProducts = (productName) => {
+  const handleProductClick = (productName, index, event) => {
     const filteredProducts = productList.filter((product) =>
       product.name.toLowerCase().includes(productName.toLowerCase())
     );
     setMatchedProducts(filteredProducts);
+    setSelectedProductIndex(index);
+
+    // Get the clicked row's position
+    const rect = event.target.closest('tr').getBoundingClientRect();
+    setDropdownPosition({
+      top: rect.bottom + -175, // Position dropdown below the clicked product name
+      left: rect.left  + -50,   // Align it horizontally with the clicked product name
+    });
+
     setDropdownVisible(true);
   };
 
-  const handleDropdownClick = async (selectedProductName) => {
+  const handleDropdownClick = async (selectedProduct) => {
     try {
-      const selectedProduct = productList.find(
-        (product) => product.name === selectedProductName
-      );
-
-      if (!selectedProduct) {
-        setError('Selected product not found.');
+      if (!orderId) {
+        setError('Order ID not found.');
         return;
       }
 
-      const updatedProducts = productData.map((product) =>
-        product.name === selectedProductName
-          ? {
-              ...product,
-              quantity: selectedProduct.quantity || 1,
-              unit: selectedProduct.unit || 'pcs',
-            }
-          : product
-      );
+      const updatedProducts = [...productData];
+      const oldProduct = updatedProducts[selectedProductIndex];
 
-      await axios.put(`http://localhost:4000/transcriptions/${orderId}`, {
+      // Update the product at the selected index
+      updatedProducts[selectedProductIndex] = {
+        name: selectedProduct.name,
+        quantity: oldProduct.quantity,
+        unit: oldProduct.unit,
+      };
+
+      // Create change record
+      const changeRecord = {
+        timestamp: new Date().toISOString(),
+        oldValue: oldProduct.name,
+        newValue: selectedProduct.name,
+        productIndex: selectedProductIndex,
+      };
+
+      // Send update to backend
+      const response = await axios.put(`http://localhost:4000/transcriptions/${orderId}`, {
         products: updatedProducts,
+        changeRecord: changeRecord,
       });
 
-      setProductData(updatedProducts);
+      // Update local state with response data
+      setProductData(response.data.products);
+      setChangeHistory(response.data.changeHistory);
+
+      // Reset UI states
       setDropdownVisible(false);
-      console.log('Product overridden successfully.');
+      setSelectedProductIndex(null);
     } catch (error) {
-      console.error('Error overriding product:', error);
-      setError('An error occurred while overriding the product.');
+      console.error('Error updating product:', error);
+      setError('An error occurred while updating the product.');
+    }
+  };
+
+  const createOrder = async () => {
+    try {
+      const updatedProducts = productData.map((product) => {
+        const matchedProduct = productList.find((item) => item.name === product.name);
+        const price = matchedProduct ? matchedProduct.price : 0;
+        const subtotal = product.quantity * price;
+
+        return {
+          ...product, // Keep the existing properties from product
+          price,      // Add price
+          subtotal,   // Add subtotal
+        };
+      });
+
+      const response = await axios.post('http://localhost:4000/api/orders', {
+        orderDate: new Date().toISOString(),
+        status: 'pending', // Default status
+        products: updatedProducts,
+      });
+      alert('Order created successfully!');
+
+      if (response.data) {
+        setOrderId(response.data.orderId);
+        setError(''); // Clear any previous error
+      }
+    } catch (error) {
+      console.error('Error creating order:', error);
+      setError('An error occurred while creating the order.');
     }
   };
 
@@ -116,7 +165,6 @@ const AudioUploader = () => {
     <div className="container">
       <h1 className="title">Audio to Product Data</h1>
 
-      {/* File Upload Section */}
       <div className="file-upload">
         <input
           type="file"
@@ -133,52 +181,184 @@ const AudioUploader = () => {
         </button>
       </div>
 
-      {/* Error Message */}
       {error && <p className="error-message">{error}</p>}
 
-      {/* Table for Product Data */}
-      {productData.length > 0 ? (
-        <table className="product-table">
-          <thead>
-            <tr>
-              <th>Product Name</th>
-              <th>Quantity</th>
-              <th>Unit</th>
-            </tr>
-          </thead>
-          <tbody>
-            {productData.map((product, index) => (
-              <tr key={index}>
-                <td onClick={() => handleMatchedProducts(product.name)}>
-                  {product.name}
-                </td>
-                <td>{product.quantity}</td>
-                <td>{product.unit}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      ) : (
-        <p className="no-data-message">
-          No product data available. Upload an audio file to see results.
-        </p>
-      )}
+      <div className="content-container">
+        <div className="table-container">
+          {productData.length > 0 ? (
+            <table className="product-table">
+              <thead>
+                <tr>
+                  <th>Product Name</th>
+                  <th>Unit</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>SubTotal</th>
+                </tr>
+              </thead>
+              <tbody>
+                {productData.map((product, index) => {
+                  // Find the matching product from productList
+                  const matchedProduct = productList.find((item) => item.name === product.name);
+                  const price = matchedProduct ? matchedProduct.price : 0;
+                  const subtotal = product.quantity * price;
 
-      {/* Dropdown for Matching Products */}
-      {dropdownVisible && matchedProducts.length > 0 && (
-        <div className="dropdown">
-          <ul>
-            {matchedProducts.map((product) => (
-              <li
-                key={product.id}
-                onClick={() => handleDropdownClick(product.name)}
-              >
-                {product.name}
-              </li>
-            ))}
-          </ul>
+                  return (
+                    <tr key={index}>
+                      <td
+                        onClick={(e) => handleProductClick(product.name, index, e)}
+                        className="product-name"
+                        style={{ cursor: 'pointer' }}
+                      >
+                        {product.name}
+                      </td>
+                      <td>{product.unit}</td>
+                      <td>{product.quantity}</td>
+                      <td>{price}</td>
+                      <td>{subtotal}</td>
+                    </tr>
+                  );
+                })}
+                {/* Add the total row */}
+                <tr>
+                  <td colSpan="4" style={{ fontWeight: 'bold', textAlign: 'right' }}>
+                    Total
+                  </td>
+                  <td style={{ fontWeight: 'bold' }}>
+                    {productData.reduce((total, product) => {
+                      const matchedProduct = productList.find((item) => item.name === product.name);
+                      const price = matchedProduct ? matchedProduct.price : 0;
+                      return total + product.quantity * price;
+                    }, 0)}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          ) : (
+            <p className="no-data-message">
+              No product data available. Upload an audio file to see results.
+            </p>
+          )}
+
+          {showHistory && changeHistory.length > 0 && (
+            <div className="history-section">
+              <h2>Change History</h2>
+              <table className="history-table">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Original Product</th>
+                    <th>Changed To</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {changeHistory.map((change, index) => (
+                    <tr key={index}>
+                      <td>{new Date(change.timestamp).toLocaleString()}</td>
+                      <td>{change.oldValue}</td>
+                      <td>{change.newValue}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
-      )}
+
+        <div>
+          <button onClick={createOrder} className="history-button" style={{ marginLeft: '910px' }}>
+            Order
+          </button>
+        </div>
+
+        {dropdownVisible && matchedProducts.length > 0 && (
+          <div className="dropdown" style={{ top: dropdownPosition.top, left: dropdownPosition.left }}>
+            <ul>
+              {matchedProducts.map((product) => (
+                <li
+                  key={product.id}
+                  onClick={() => handleDropdownClick(product)}
+                  className="dropdown-item"
+                >
+                  {product.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+
+      <style jsx>{`
+        .container {
+          padding: 20px;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .content-container {
+          position: relative;
+        }
+
+        .file-upload {
+          margin-bottom: 20px;
+        }
+
+        .upload-button {
+          padding: 10px;
+          background-color: #4caf50;
+          color: white;
+          border: none;
+          cursor: pointer;
+        }
+
+        .product-table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+
+        .product-table th,
+        .product-table td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: center;
+        }
+
+        .history-button {
+          background-color: #4caf50;
+          color: white;
+          padding: 10px;
+          border: none;
+          cursor: pointer;
+        }
+
+        .dropdown {
+          position: absolute;
+          background-color: white;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+          min-width: 200px;
+        }
+
+        .dropdown ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .dropdown-item {
+          padding: 8px;
+          cursor: pointer;
+        }
+
+        .dropdown-item:hover {
+          background-color: #f1f1f1;
+        }
+
+        .no-data-message {
+          text-align: center;
+          color: gray;
+        }
+      `}</style>
     </div>
   );
 };
