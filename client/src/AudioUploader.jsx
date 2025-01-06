@@ -130,6 +130,38 @@ const AudioUploader = () => {
     }
   };
 
+  const generatePDF = async (orderData) => {
+    try {
+      const response = await axios.post('http://localhost:4000/api/generate-pdf', {
+        orderId: orderId,
+        orderDate: new Date(orderData.orderDate).toLocaleString(),
+        products: orderData.products,
+        total: orderData.products.reduce((sum, product) => sum + product.subtotal, 0),
+        status: orderData.status
+      }, {
+        responseType: 'blob' 
+      });
+
+      // Create a blob from the PDF data
+      const blob = new Blob([response.data], { type: 'application/pdf' });
+      const url = window.URL.createObjectURL(blob);
+      
+      // Create a link and trigger download
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `order-${orderData.orderId}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      
+      // Cleanup
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      setError('An error occurred while generating the PDF.');
+    }
+  };
+
   const createOrder = async () => {
     try {
       const updatedProducts = productData.map((product) => {
@@ -138,22 +170,25 @@ const AudioUploader = () => {
         const subtotal = product.quantity * price;
 
         return {
-          ...product, // Keep the existing properties from product
-          price,      // Add price
-          subtotal,   // Add subtotal
+          ...product,
+          price,
+          subtotal,
         };
       });
 
       const response = await axios.post('http://localhost:4000/api/orders', {
         orderDate: new Date().toISOString(),
-        status: 'pending', // Default status
+        status: 'pending',
         products: updatedProducts,
       });
-      alert('Order created successfully!');
 
       if (response.data) {
         setOrderId(response.data.orderId);
-        setError(''); // Clear any previous error
+        setError('');
+        alert('Order created successfully!');
+        
+        // Generate PDF after successful order creation
+        await generatePDF(response.data);
       }
     } catch (error) {
       console.error('Error creating order:', error);

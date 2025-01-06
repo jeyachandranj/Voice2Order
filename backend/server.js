@@ -9,6 +9,8 @@ const Transcription = require('./transcription');
 const Order = require('./Order');
 const Groq = require('groq-sdk');
 const cors = require('cors');
+const PDFDocument = require('pdfkit');
+
 
 
 const app = express();
@@ -204,6 +206,169 @@ async function storeInDB(data) {
     console.error('Error saving data to database:', error);
   }
 }
+
+
+
+
+
+
+app.post('/api/generate-pdf', async (req, res) => {
+  const { orderId, orderDate, products, total, status } = req.body;
+  
+  // Create a new PDF document
+  const doc = new PDFDocument({
+    size: 'A4',
+    margins: {
+      top: 50,
+      bottom: 50,
+      left: 50,
+      right: 50
+    }
+  });
+
+  try {
+    // Set response headers
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename=order-${orderId}.pdf`);
+    
+    // Pipe the PDF document to the response
+    doc.pipe(res);
+
+    // Download and add logo
+    const logoResponse = await axios.get('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtQDjk0CSmSehZyc8ixmEX4aeKMwSpeSoScQ&s', {
+      responseType: 'arraybuffer'
+    });
+    
+    // Add logo to the top right corner
+    doc.image(logoResponse.data, 450, 50, {
+      width: 100
+    });
+
+    // Add company info
+    doc
+      .fontSize(20)
+      .text('INVOICE', 50, 50)
+      .fontSize(10)
+      .text('Farm2Bag', 50, 80)
+      .text('5/396 , Rajeev Gandhi Salai, OMR Thoraipakkam', 50, 95)
+      .text('Chennai 600097, Tamil Nadu', 50, 110)
+      .text('Phone: +91 95000 37221 | +91 91761 85709', 50, 125)
+      .text('Email: farm2bag@gmail.com', 50, 140);
+
+    // Add invoice details
+    doc
+      .fontSize(12)
+      .text('BILL TO:', 50, 180)
+      .fontSize(10)
+      .text(`Invoice Number: ${orderId}`, 350, 180)
+      .text(`Date: ${new Date(orderDate).toLocaleDateString()}`, 350, 195)
+      .text(`Status: ${status}`, 350, 210);
+
+    // Add table headers with background
+    const tableTop = 250;
+    const tableHeaders = ['Product', 'Quantity', 'Unit Price', 'Subtotal'];
+    const columnWidths = [250, 80, 100, 100];
+    let currentLeft = 50;
+
+    // Draw table header background
+    doc
+      .rect(50, tableTop - 5, 530, 20)
+      .fill('#f0f0f0');
+
+    // Add table headers
+    doc.fontSize(10).fillColor('#000000');
+    tableHeaders.forEach((header, i) => {
+      doc.text(header, currentLeft, tableTop);
+      currentLeft += columnWidths[i];
+    });
+
+    // Add table content
+    let yPosition = tableTop + 30;
+    let alternateRow = false;
+
+    products.forEach((product) => {
+      // Check if we need a new page
+      if (yPosition > 700) {
+        doc.addPage();
+        yPosition = 50; // Reset Y position for new page
+      }
+
+      // Add alternating row background
+      if (alternateRow) {
+        doc
+          .rect(50, yPosition - 5, 530, 20)
+          .fill('#f9f9f9');
+      }
+
+      currentLeft = 50;
+      doc.fillColor('#000000')
+         .text(product.name, currentLeft, yPosition);
+      
+      currentLeft += columnWidths[0];
+      doc.text(product.quantity.toString(), currentLeft, yPosition);
+      
+      currentLeft += columnWidths[1];
+      doc.text(`$${product.price.toFixed(2)}`, currentLeft, yPosition);
+      
+      currentLeft += columnWidths[2];
+      doc.text(`$${product.subtotal.toFixed(2)}`, currentLeft, yPosition);
+
+      yPosition += 25;
+      alternateRow = !alternateRow;
+    });
+
+    // Add line above totals
+    doc
+      .moveTo(50, yPosition)
+      .lineTo(580, yPosition)
+      .stroke();
+
+    // Add total
+    doc
+      .fontSize(12)
+      .text('Subtotal:', 400, yPosition + 20)
+      .text(`$${total.toFixed(2)}`, 500, yPosition + 20)
+      .text('Tax (10%):', 400, yPosition + 40)
+      .text(`$${(total * 0.1).toFixed(2)}`, 500, yPosition + 40)
+      .fontSize(14)
+      .text('Total:', 400, yPosition + 65)
+      .text(`$${(total * 1.1).toFixed(2)}`, 500, yPosition + 65);
+
+    // Add footer
+    const footerTop = doc.page.height - 100;
+    doc
+      .fontSize(10)
+      .text('Thank you for your business!', 50, footerTop)
+      .fontSize(8)
+      .text('Terms & Conditions:', 50, footerTop + 20)
+      .text('1. Please pay within 30 days', 50, footerTop + 35)
+      .text('2. Make all checks payable to Your Company Name', 50, footerTop + 50);
+
+    // Add page number at the bottom of each page
+    doc.fontSize(8).text(
+      `Page ${doc.bufferedPageRange().start + 1}`,
+      0,
+      doc.page.height - 50,
+      { align: 'center' }
+    );
+
+    // Finalize the PDF
+    doc.end();
+
+  } catch (error) {
+    console.error('Error generating PDF:', error);
+    
+    // Only send error response if headers haven't been sent
+    if (!res.headersSent) {
+      res.status(500).send('Error generating PDF');
+    }
+    
+    // Make sure to end the document if it was created
+    if (doc) {
+      doc.end();
+    }
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
