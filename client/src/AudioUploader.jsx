@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import productList from './products.json';
+import { Groq } from 'groq-sdk';
+
 
 const AudioUploader = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -15,6 +17,8 @@ const AudioUploader = () => {
   const [showHistory, setShowHistory] = useState(false);
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 });
+    const [isProcessing, setIsProcessing] = useState(false);
+  
 
   const productNameRef = useRef(null);
 
@@ -24,6 +28,33 @@ const AudioUploader = () => {
     setProductData([]);
     setChangeHistory([]);
   };
+
+  const matchProductWithAI = async (productName, productList) => {
+    console.log('Matching product with AI:', productName);
+    console.log('Product list:', productList);
+  
+    try {
+      const response = await fetch('http://localhost:4000/api/match-product', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ productName, productList }),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to fetch data from the server');
+      }
+  
+      const result = await response.json();
+      console.log('Matched Product:', result);
+      return result;
+    } catch (error) {
+      console.error('Error matching product:', error);
+      return null;
+    }
+  };
+  
 
   const handleUpload = async () => {
     if (!selectedFile) {
@@ -37,9 +68,12 @@ const AudioUploader = () => {
     try {
       setIsUploading(true);
       setError('');
-      await axios.post('http://localhost:4000/transcribe', formData, {
+      const response = await axios.post('http://localhost:4000/transcribe', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
+
+      
+
       setFetchTrigger(true);
     } catch (error) {
       console.error('Error uploading file:', error);
@@ -54,7 +88,44 @@ const AudioUploader = () => {
       try {
         const response = await axios.get('http://localhost:4000/transcriptions');
         const data = response.data;
-        setProductData(data.products || []);
+
+
+
+      if (response.data.products) {
+        console.log('Response data:', response.data);
+        const matchedProducts = [];
+        
+        // Process each product through Groq AI
+        for (const product of response.data.products) {
+          const matchedProduct = await matchProductWithAI(product.name, productList);
+          
+          if (matchedProduct) {
+            matchedProducts.push({
+              ...product,
+              name: matchedProduct.name,
+              price: matchedProduct.price,
+              subtotal: matchedProduct.price * product.quantity
+            });
+
+            // Record the change if product name was different
+            if (product.name !== matchedProduct.name) {
+              const changeRecord = {
+                timestamp: new Date().toISOString(),
+                oldValue: product.name,
+                newValue: matchedProduct.name,
+                productIndex: matchedProducts.length - 1,
+              };
+              setChangeHistory(prev => [...prev, changeRecord]);
+            }
+          } else {
+            matchedProducts.push(product);
+          }
+        }
+
+        setProductData(matchedProducts);
+        console.log('Product data:', matchedProducts);
+        setIsProcessing(true);
+      }
         setOrderId(data._id);
         setChangeHistory(data.changeHistory || []);
       } catch (error) {
@@ -220,7 +291,7 @@ const AudioUploader = () => {
 
       <div className="content-container">
         <div className="table-container">
-          {productData.length > 0 ? (
+          {isProcessing ? (
             <table className="product-table">
               <thead>
                 <tr>
@@ -232,39 +303,21 @@ const AudioUploader = () => {
                 </tr>
               </thead>
               <tbody>
-                {productData.map((product, index) => {
-                  // Find the matching product from productList
-                  const matchedProduct = productList.find((item) => item.name === product.name);
-                  const price = matchedProduct ? matchedProduct.price : 0;
-                  const subtotal = product.quantity * price;
-
-                  return (
-                    <tr key={index}>
-                      <td
-                        onClick={(e) => handleProductClick(product.name, index, e)}
-                        className="product-name"
-                        style={{ cursor: 'pointer' }}
-                      >
-                        {product.name}
-                      </td>
-                      <td>{product.unit}</td>
-                      <td>{product.quantity}</td>
-                      <td>{price}</td>
-                      <td>{subtotal}</td>
-                    </tr>
-                  );
-                })}
-                {/* Add the total row */}
+                {productData.map((product, index) => (
+                  <tr key={index}>
+                    <td>{product.name}</td>
+                    <td>{product.unit}</td>
+                    <td>{product.quantity}</td>
+                    <td>{product.price || 0}</td>
+                    <td>{product.subtotal || 0}</td>
+                  </tr>
+                ))}
                 <tr>
                   <td colSpan="4" style={{ fontWeight: 'bold', textAlign: 'right' }}>
                     Total
                   </td>
                   <td style={{ fontWeight: 'bold' }}>
-                    {productData.reduce((total, product) => {
-                      const matchedProduct = productList.find((item) => item.name === product.name);
-                      const price = matchedProduct ? matchedProduct.price : 0;
-                      return total + product.quantity * price;
-                    }, 0)}
+                    {productData.reduce((total, product) => total + (product.subtotal || 0), 0)}
                   </td>
                 </tr>
               </tbody>

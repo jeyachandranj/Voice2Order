@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const upload = multer({ dest: 'uploads/' });
 
-const groqApiKey = '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';
+const groqApiKey = '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';
 const groqUrl = 'https://api.groq.com/openai/v1/audio/transcriptions';
 
 const groq = new Groq({ apiKey: groqApiKey });
@@ -149,11 +149,36 @@ app.post('/api/orders', async (req, res) => {
     return res.status(500).json({ message: 'Server error. Could not create order.' });
   }
 });
+
+function loadDatabaseFromTextFile(filePath) {
+  try {
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+
+    const lines = fileContent.split('\n').filter(line => line.trim() !== '');
+
+    const products = lines.map(line => {
+      const [name] = line.split(' - ');
+      return { name: name.trim() };
+    });
+
+    return products;
+  } catch (error) {
+    console.error('Error reading the text file:', error);
+    return [];
+  }
+}
+
+const dbFilePath = './data.txt'; 
+const dbProducts = loadDatabaseFromTextFile(dbFilePath);
+
 async function handleProductData(transcription) {
+  console.log('Database products:', dbProducts);
+
   const prompt = {
     transcription: transcription,
     request: "Please provide the list of products and their quantities in the format: Product - Name: [name], Quantity: [quantity], Unit: [unit]. Example: Tomato - Name: Tomato, Quantity: 5, Unit: kg. Return the products list in plain text, no JSON required.",
-  };
+    };
+
 
   try {
     const completion = await groq.chat.completions.create({
@@ -206,6 +231,80 @@ async function storeInDB(data) {
     console.error('Error saving data to database:', error);
   }
 }
+
+app.post('/api/match-product', async (req, res) => {
+  const { productName, productList } = req.body;
+
+  if (!productName || !productList || !Array.isArray(productList)) {
+    return res.status(400).json({ 
+      error: 'Invalid request format. Requires productName and productList array.' 
+    });
+  }
+
+  // Filter products for potential matches
+  const filteredProducts = productList.filter(product =>
+    product.name.toLowerCase().includes(productName.toLowerCase())
+  );
+
+  console.log('Filtered product list:', filteredProducts);
+
+  const prompt = `
+    Given the product name "${productName}" and the following product list:
+    ${JSON.stringify(filteredProducts, null, 2)}
+    
+    Find the single best matching product from the list. Consider similar names, common misspellings, and abbreviations.
+    Respond in this format:
+    ProductName: [BestMatchingProductName], Price: [Price]
+    If no match is found, respond with: ProductName: null, Price: null.
+  `;
+
+  try {
+    // Request completion from Groq AI
+    const completion = await groq.chat.completions.create({
+      messages: [{ role: "user", content: prompt }],
+      model: "llama-3.3-70b-versatile",
+      temperature: 0.1,
+      max_tokens: 500,
+    });
+
+    const responseContent = completion.choices[0]?.message?.content?.trim() || '';
+    console.log('Raw AI Response:', responseContent);
+
+    if (!responseContent) {
+      return res.status(200).json({ name: null, price: null });
+    }
+
+    // Parse the AI response to the required JSON format
+    try {
+      const match = responseContent.match(/ProductName:\s*(.*?),\s*Price:\s*(.*)/);
+      if (!match) {
+        throw new Error('Invalid response format from AI');
+      }
+
+      const name = match[1].trim() === 'null' ? productName : match[1].trim();
+      const price = match[2].trim() === 'null' ? 0 : match[2].trim();
+
+      const result = { name, price };
+      console.log('Parsed AI Result:', result);
+
+      return res.status(200).json(result);
+    } catch (parseError) {
+      console.error('Error parsing AI response:', parseError);
+      return res.status(500).json({ 
+        error: 'Failed to parse AI response', 
+        details: parseError.message 
+      });
+    }
+  } catch (error) {
+    console.error('Groq AI Error:', error);
+    return res.status(500).json({ 
+      error: 'Internal Server Error', 
+      details: error.message 
+    });
+  }
+});
+
+
 
 
 
