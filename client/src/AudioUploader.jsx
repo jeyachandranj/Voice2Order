@@ -3,6 +3,8 @@ import axios from 'axios';
 import productList from './products.json';
 import { Trash2, Edit2, Save, X } from 'lucide-react';
 import AudioRecorder from './AudioRecorder';
+import LoadingSpinner from './LoadingSpinner';
+
 
 
 const AudioUploader = () => {
@@ -15,12 +17,24 @@ const AudioUploader = () => {
   const [editingRow, setEditingRow] = useState(null);
   const [editedData, setEditedData] = useState({});
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
+  const [isClearing, setIsClearing] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [showSpinner, setShowSpinner] = useState(false);
+
+
+const handleClear = () => {
+  setIsClearing(true);
+  setProductData([]);
+  setSelectedFile(null);
+  setError('');
+  setIsProcessing(false);
+  setIsClearing(false);
+};
 
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
     setError('');
-    setProductData([]);
   };
 
   const matchProductWithAI = async (productName) => {
@@ -45,29 +59,82 @@ const AudioUploader = () => {
     }
   };
 
-  const handleUpload = async () => {
-    if (!selectedFile) {
-      setError('Please select an audio file to upload.');
-      return;
-    }
+  // Update the handleUpload function with this modified version:
+const handleUpload = async () => {
+  if (!selectedFile) {
+    setError('Please select an audio file to upload.');
+    return;
+  }
 
-    const formData = new FormData();
-    formData.append('audioFile', selectedFile);
+  const formData = new FormData();
+  formData.append('audioFile', selectedFile);
 
-    try {
-      setIsUploading(true);
-      setError('');
-      await axios.post('http://localhost:4000/transcribe', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+  try {
+    setIsUploading(true);
+    setError('');
+    setShowSpinner(true);
+    setUploadProgress(0);
+
+    // Simulated upload progress
+    const progressInterval = setInterval(() => {
+      setUploadProgress(prev => {
+        if (prev >= 90) {
+          clearInterval(progressInterval);
+          return 90;
+        }
+        return prev + 10;
       });
-      setFetchTrigger(true);
-    } catch (error) {
-      console.error('Error uploading file:', error);
-      setError('An error occurred while processing the audio file.');
-    } finally {
-      setIsUploading(false);
-    }
-  };
+    }, 500);
+
+    await axios.post('http://localhost:4000/transcribe', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+      onUploadProgress: (progressEvent) => {
+        const percentCompleted = Math.round(
+          (progressEvent.loaded * 100) / progressEvent.total
+        );
+        setUploadProgress(Math.min(90, percentCompleted));
+      },
+    });
+
+    setFetchTrigger(true);
+    
+    // Start processing progress
+    const processingInterval = setInterval(() => {
+      setUploadProgress(prev => {
+        if (prev >= 99) {
+          clearInterval(processingInterval);
+          setShowSpinner(false); // Hide spinner at 99%
+          return 99;
+        }
+        return prev + 1;
+      });
+    }, 200);
+
+    // Cleanup when processing is complete
+    const cleanup = () => {
+      clearInterval(progressInterval);
+      clearInterval(processingInterval);
+      setShowSpinner(false);
+      setUploadProgress(0);
+    };
+
+    // Wait for processing to complete
+    const checkProcessing = setInterval(() => {
+      if (isProcessing) {
+        cleanup();
+        clearInterval(checkProcessing);
+      }
+    }, 100);
+
+  } catch (error) {
+    console.error('Error uploading file:', error);
+    setError('An error occurred while processing the audio file.');
+    setShowSpinner(false);
+    setUploadProgress(0);
+  } finally {
+    setIsUploading(false);
+  }
+};
 
   const handleEdit = (index) => {
     setEditingRow(index);
@@ -117,27 +184,63 @@ const AudioUploader = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:4000/transcriptions');
-
+  
         if (response.data.products) {
           const matchedProducts = [];
+          const uniqueProducts = new Map();
           
           for (const product of response.data.products) {
             const matchedProduct = await matchProductWithAI(product.name);
             const matchedPriceProduct = productList.find(p => p.name === matchedProduct.name);
-
+  
             if (matchedPriceProduct) {
-              matchedProducts.push({
-                ...product,
-                name: matchedPriceProduct.name,
-                price: matchedPriceProduct.price,
-                subtotal: matchedPriceProduct.price * product.quantity,
-              });
+              const existingProduct = uniqueProducts.get(matchedPriceProduct.name);
+              
+              if (existingProduct) {
+                // Update quantity and subtotal for existing product
+                existingProduct.quantity += product.quantity;
+                existingProduct.subtotal = existingProduct.quantity * matchedPriceProduct.price;
+              } else {
+                // Add new product to map
+                uniqueProducts.set(matchedPriceProduct.name, {
+                  ...product,
+                  name: matchedPriceProduct.name,
+                  price: matchedPriceProduct.price,
+                  subtotal: matchedPriceProduct.price * product.quantity,
+                });
+              }
             } else {
-              matchedProducts.push(product);
+              const existingProduct = uniqueProducts.get(product.name);
+              
+              if (existingProduct) {
+                existingProduct.quantity += product.quantity;
+                existingProduct.subtotal = existingProduct.quantity * (existingProduct.price || 0);
+              } else {
+                uniqueProducts.set(product.name, product);
+              }
             }
           }
-
-          setProductData(matchedProducts);
+  
+          // Combine with existing products if any
+          const existingProductMap = new Map(
+            productData.map(product => [product.name, product])
+          );
+  
+          // Merge new products with existing ones
+          uniqueProducts.forEach((product, name) => {
+            if (existingProductMap.has(name)) {
+              const existing = existingProductMap.get(name);
+              existingProductMap.set(name, {
+                ...existing,
+                quantity: existing.quantity + product.quantity,
+                subtotal: (existing.quantity + product.quantity) * (existing.price || 0)
+              });
+            } else {
+              existingProductMap.set(name, product);
+            }
+          });
+  
+          setProductData(Array.from(existingProductMap.values()));
           setIsProcessing(true);
         }
       } catch (error) {
@@ -145,12 +248,12 @@ const AudioUploader = () => {
         setError('An error occurred while fetching product data.');
       }
     };
-
+  
     if (fetchTrigger) {
       fetchData();
       setFetchTrigger(false);
     }
-  }, [fetchTrigger]);
+  }, [fetchTrigger, productData]);
 
   const createOrder = async () => {
     try {
@@ -176,33 +279,40 @@ const AudioUploader = () => {
     <div className="container">
       <h1 className="title">Audio to Product Data</h1>
       <div className="upload-section">
-        <div className="file-upload">
-          <input
-            type="file"
-            accept="audio/*"
-            onChange={handleFileChange}
-            className="file-input"
-          />
-          <button
-            onClick={handleUpload}
-            disabled={isUploading}
-            className="upload-button"
-          >
-            {isUploading ? 'Uploading...' : 'Upload'}
-          </button>
-        </div>
+  <div className="file-upload">
+    <input
+      type="file"
+      accept="audio/*"
+      onChange={handleFileChange}
+      className="file-input"
+    />
+    <div className="button-group">
+      <button
+        onClick={handleUpload}
+        disabled={isUploading || !selectedFile}
+        className="upload-button"
+      >
+        {isUploading ? 'processing...' : 'process'}
+      </button>
+      <button
+        onClick={handleClear}
+        disabled={isClearing || (!productData.length && !selectedFile)}
+        className="clear-button"
+      >
+        Clear All
+      </button>
+    </div>
+  </div>
 
-
-        <div className="recorder-section">
-          <AudioRecorder 
-            onRecordingComplete={(audioFile) => {
-              setSelectedFile(audioFile);
-              setError('');
-              setProductData([]);
-            }} 
-          />
-        </div>
-      </div>
+  <div className="recorder-section">
+    <AudioRecorder 
+      onRecordingComplete={(audioFile) => {
+        setSelectedFile(audioFile);
+        setError('');
+      }} 
+    />
+  </div>
+</div>
 
       {error && <p className="error-message">{error}</p>}
 
@@ -302,6 +412,8 @@ const AudioUploader = () => {
             </p>
           )}
         </div>
+        {showSpinner && <LoadingSpinner percentage={uploadProgress} />}
+
         <div className="text-right mt-4">
         <button 
           onClick={() => setShowConfirmDialog(true)} 
@@ -446,6 +558,39 @@ const AudioUploader = () => {
         .order-button:hover {
           background-color: #e69500;
         }
+
+        .button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.clear-button {
+  padding: 10px;
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clear-button:hover:not(:disabled) {
+  background-color: #b91c1c;
+}
+
+.clear-button:disabled {
+  background-color: #f87171;
+  cursor: not-allowed;
+}
+
+.file-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
 
         .action-buttons {
           white-space: nowrap;

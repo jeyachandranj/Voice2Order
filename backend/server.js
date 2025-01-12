@@ -338,9 +338,9 @@ app.post('/api/match-product', async (req, res) => {
           score: bestMatch,
         });
       } else {
-      return res.status(404).json({
+      return res.status(200).json({
         success: false,
-        message: 'No matching product found',
+        name: productName,
       });
     }
     }
