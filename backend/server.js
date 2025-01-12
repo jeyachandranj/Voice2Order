@@ -9,9 +9,14 @@ const Transcription = require('./transcription');
 const Order = require('./Order');
 const Groq = require('groq-sdk');
 const cors = require('cors');
-const PDFDocument = require('pdfkit');
 const productList = require('./data.json');
 const Fuse = require('fuse.js');
+const { spawn } = require('child_process');
+const ffmpeg = require('fluent-ffmpeg');
+const sox = require('sox-stream');
+const { pipeline } = require('stream/promises');
+const { Readable } = require('stream');
+
 
 
 
@@ -35,44 +40,118 @@ mongoose.connect(mongoURI)
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('MongoDB connection error:', err));
 
+
+
+
+const SAMPLE_RATE = 16000;
+const CHANNELS = 1;
+
+async function preprocessAudio(inputPath) {
+    const outputPath = inputPath + '_processed.wav';
+    
+    try {
+        await new Promise((resolve, reject) => {
+            ffmpeg(inputPath)
+                .toFormat('wav')
+                .audioChannels(CHANNELS)
+                .audioFrequency(SAMPLE_RATE)
+                .audioFilters([
+                    // Remove background noise and normalize
+                    'highpass=f=50',          // Remove low frequency noise
+                    'lowpass=f=3000',         // Remove high frequency noise
+                    'afftdn=nr=10:nf=-25',    // FFT noise reduction
+                    'silenceremove=1:0:-50dB', // Remove silence
+                    // Normalize and enhance speech
+                    'compand=.3|.3:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6:0:-90:0.2',
+                    'volume=1.5',             // Increase volume
+                    'dynaudnorm=f=150:g=15:p=0.95', // Dynamic audio normalization
+                    'aresample=async=1:first_pts=0', // Ensure consistent timing
+                    'apad=pad_dur=0.5'        // Add small padding
+                ])
+                .on('error', (err) => {
+                    console.error('FFmpeg error:', err);
+                    reject(err);
+                })
+                .on('end', () => {
+                    console.log('Audio preprocessing completed');
+                    resolve();
+                })
+                .save(outputPath);
+        });
+
+        return outputPath;
+    } catch (error) {
+        console.error('Preprocessing error:', error);
+        throw new Error(`Audio preprocessing failed: ${error.message}`);
+    }
+}
+
 app.post('/transcribe', upload.single('audioFile'), async (req, res) => {
-  if (!req.file) {
-    return res.status(400).send('No audio file uploaded');
-  }
-
-  const audioFilePath = path.join(__dirname, req.file.path);
-
-  try {
-    const audioStream = fs.createReadStream(audioFilePath);
-    const formData = new FormData();
-    formData.append('file', audioStream, req.file.originalname);
-    formData.append('model', 'whisper-large-v3-turbo');
-    formData.append('prompt', 'Specify context or spelling');
-    formData.append('response_format', 'json');
-    formData.append('language', 'en');
-    formData.append('temperature', '0.0');
-
-    const response = await axios.post(groqUrl, formData, {
-      headers: {
-        ...formData.getHeaders(),
-        'Authorization': `Bearer ${groqApiKey}`,
-      },
-    });
-
-    if (response.data.text) {
-      const transcription = response.data.text;
-      await handleProductData(transcription);
-      res.json({ success: true, message: 'Audio processed successfully' });
-    } else {
-      res.status(400).send('No speech detected in the audio');
+    if (!req.file) {
+        return res.status(400).send('No audio file uploaded');
     }
 
-    fs.unlinkSync(audioFilePath);
-  } catch (error) {
-    console.error('Error during transcription:', error);
-    res.status(500).send('An error occurred during transcription');
-  }
+    const audioFilePath = path.join(__dirname, req.file.path);
+    let processedAudioPath = null;
+
+    try {
+        processedAudioPath = await preprocessAudio(audioFilePath);
+        console.log('Processed audio saved at:', processedAudioPath);
+        
+        const formData = new FormData();
+        const audioStream = fs.createReadStream(processedAudioPath);
+        
+        formData.append('file', audioStream, req.file.originalname);
+        formData.append('model', 'whisper-large-v3-turbo');
+        formData.append('prompt', 'Specify context or spelling');
+        formData.append('response_format', 'json');
+        formData.append('language', 'en');
+        formData.append('temperature', '0.0');
+
+        // Send to transcription service
+        const response = await axios.post(groqUrl, formData, {
+            headers: {
+                ...formData.getHeaders(),
+                'Authorization': `Bearer ${groqApiKey}`,
+            },
+            maxBodyLength: Infinity,
+            timeout: 300000 // 5 minute timeout
+        });
+
+        if (response.data.text) {
+            const transcription = response.data.text;
+            await handleProductData(transcription);
+            res.json({ 
+                success: true, 
+                message: 'Audio processed successfully',
+                transcription: transcription 
+            });
+        } else {
+            res.status(400).send('No speech detected in the audio');
+        }
+
+    } catch (error) {
+        console.error('Error during processing:', error);
+        res.status(500).json({
+            success: false,
+            message: 'An error occurred during audio processing or transcription',
+            error: error.message
+        });
+    } finally {
+        // Clean up files
+        try {
+            if (processedAudioPath && fs.existsSync(processedAudioPath)) {
+                fs.unlinkSync(processedAudioPath);
+            }
+            if (fs.existsSync(audioFilePath)) {
+                fs.unlinkSync(audioFilePath);
+            }
+        } catch (cleanupError) {
+            console.error('Error during cleanup:', cleanupError);
+        }
+    }
 });
+
 
 app.get('/transcriptions', async (req, res) => {
   try {
@@ -160,7 +239,7 @@ async function handleProductData(transcription) {
 
   const prompt = {
     transcription: transcription,
-    request: "Please provide the list of products and their quantities in the format: Product - Name: [name], Quantity: [quantity], Unit: [unit]. Example: Tomato - Name: Tomato, Quantity: 5, Unit: kg. Return the products list in plain text, no JSON required.",
+    request: `Please ensure the product name is spelled correctly and matches common grocery items.Please ensure the product name is correctly interpreted even if the customer uses "Tanglish" (a mix of Tamil and English). For example, if the customer says "Ventakai," interpret it as "Okra," and if they say "Takkali," interpret it as "Tomato." Provide the output in the format:and their quantities in the format: Product - Name: [name], Quantity: [quantity], Unit: [unit]. Example: Tomato - Name: Tomato, Quantity: 5, Unit: kg. Return the products list in plain text, no JSON required.`,
     };
 
 
@@ -245,10 +324,25 @@ app.post('/api/match-product', async (req, res) => {
         score: bestMatch,
       });
     } else {
+      const reresult = fuse.search(productName);
+
+      if (reresult.length > 0) {
+        const bestMatch = result[0].item; // Get the top match
+        console.log('Customer Input:', productName);
+        console.log('Best Match:', bestMatch.name);
+        console.log('Matching Product Details:', bestMatch);
+  
+        return res.status(200).json({
+          success: true,
+          name: bestMatch.name,
+          score: bestMatch,
+        });
+      } else {
       return res.status(404).json({
         success: false,
         message: 'No matching product found',
       });
+    }
     }
   } catch (error) {
     console.error('Error matching product:', error);
