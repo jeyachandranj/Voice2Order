@@ -11,6 +11,8 @@ const Groq = require('groq-sdk');
 const cors = require('cors');
 const PDFDocument = require('pdfkit');
 const productList = require('./data.json');
+const Fuse = require('fuse.js');
+
 
 
 
@@ -85,7 +87,8 @@ app.get('/transcriptions', async (req, res) => {
     res.status(500).send('An error occurred while fetching transcriptions');
   }
 });
-// Update this endpoint in your server.js
+
+
 app.put('/transcriptions/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -151,29 +154,9 @@ app.post('/api/orders', async (req, res) => {
   }
 });
 
-function loadDatabaseFromTextFile(filePath) {
-  try {
-    const fileContent = fs.readFileSync(filePath, 'utf8');
 
-    const lines = fileContent.split('\n').filter(line => line.trim() !== '');
-
-    const products = lines.map(line => {
-      const [name] = line.split(' - ');
-      return { name: name.trim() };
-    });
-
-    return products;
-  } catch (error) {
-    console.error('Error reading the text file:', error);
-    return [];
-  }
-}
-
-const dbFilePath = './data.txt'; 
-const dbProducts = loadDatabaseFromTextFile(dbFilePath);
 
 async function handleProductData(transcription) {
-  console.log('Database products:', dbProducts);
 
   const prompt = {
     transcription: transcription,
@@ -233,80 +216,49 @@ async function storeInDB(data) {
   }
 }
 
+const options = {
+  keys: ["name"],
+  threshold: 0.3, 
+};
+
+const fuse = new Fuse(productList, options);
+
 app.post('/api/match-product', async (req, res) => {
   const { productName } = req.body;
 
-  if (!productName || !productList || !Array.isArray(productList)) {
-    return res.status(400).json({ 
-      error: 'Invalid request format. Requires productName and productList array.' 
-    });
+  if (!productName) {
+    return res.status(400).json({ error: 'Product name is required' });
   }
 
-  // Filter products for potential matches
-  const filteredProducts = productList.filter(product =>
-    product.name.toLowerCase().includes(productName.toLowerCase())
-  );
-
-  console.log('Filtered product list:', filteredProducts);
-
-  const prompt = `
-    Given the product name "${productName}" and the following product list:
-    ${JSON.stringify(filteredProducts, null, 2)}
-    
-    Find the single best matching product from the list. Consider similar names, common misspellings, and abbreviations.
-    Respond in this format:
-    ProductName: [BestMatchingProductName], Price: [Price]
-    If no match is found, respond with: ProductName: null, Price: null.
-  `;
-
   try {
-    // Request completion from Groq AI
-    const completion = await groq.chat.completions.create({
-      messages: [{ role: "user", content: prompt }],
-      model: "llama-3.3-70b-versatile",
-      temperature: 0.1,
-      max_tokens: 500,
-    });
+    const result = fuse.search(productName);
 
-    const responseContent = completion.choices[0]?.message?.content?.trim() || '';
-    console.log('Raw AI Response:', responseContent);
+    if (result.length > 0) {
+      const bestMatch = result[0].item; // Get the top match
+      console.log('Customer Input:', productName);
+      console.log('Best Match:', bestMatch.name);
+      console.log('Matching Product Details:', bestMatch);
 
-    if (!responseContent) {
-      return res.status(200).json({ name: null, price: null });
-    }
-
-    // Parse the AI response to the required JSON format
-    try {
-      const match = responseContent.match(/ProductName:\s*(.*?),\s*Price:\s*(.*)/);
-if (!match) {
-  throw new Error('Invalid response format from AI');
-}
-
-const name = match[1].trim() === 'null' ? productName : match[1].trim();
-
-// Ensure the price is a number; if not, set it to 0
-const priceString = match[2].trim();
-const price = /^[0-9]+(\.[0-9]+)?$/.test(priceString) ? parseFloat(priceString) : 0;
-
-      const result = { name, price };
-      console.log('Parsed AI Result:', result);
-
-      return res.status(200).json(result);
-    } catch (parseError) {
-      console.error('Error parsing AI response:', parseError);
-      return res.status(500).json({ 
-        error: 'Failed to parse AI response', 
-        details: parseError.message 
+      return res.status(200).json({
+        success: true,
+        name: bestMatch.name,
+        score: bestMatch,
+      });
+    } else {
+      return res.status(404).json({
+        success: false,
+        message: 'No matching product found',
       });
     }
   } catch (error) {
-    console.error('Groq AI Error:', error);
+    console.error('Error matching product:', error);
     return res.status(500).json({ 
       error: 'Internal Server Error', 
       details: error.message 
     });
   }
 });
+
 
 
 
