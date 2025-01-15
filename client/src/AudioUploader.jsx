@@ -1,155 +1,147 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import productList from './products.json';
 import { Trash2, Edit2, Save, X } from 'lucide-react';
 import AudioRecorder from './AudioRecorder';
-import LoadingSpinner from './LoadingSpinner';
-
-
+import productList from "./products.json"
 
 const AudioUploader = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [productData, setProductData] = useState([]);
   const [error, setError] = useState('');
   const [isUploading, setIsUploading] = useState(false);
-  const [fetchTrigger, setFetchTrigger] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [editingRow, setEditingRow] = useState(null);
   const [editedData, setEditedData] = useState({});
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
   const [isClearing, setIsClearing] = useState(false);
-  const [uploadProgress, setUploadProgress] = useState(0);
-  const [showSpinner, setShowSpinner] = useState(false);
+  const [audioUrl, setAudioUrl] = useState(null);
+  const audioRef = useRef(null);
 
+  // Clean up audio URL when component unmounts
+  useEffect(() => {
+    return () => {
+      if (audioUrl) {
+        URL.revokeObjectURL(audioUrl);
+      }
+    };
+  }, [audioUrl]);
 
-const handleClear = () => {
-  setIsClearing(true);
-  setProductData([]);
-  setSelectedFile(null);
-  setError('');
-  setIsProcessing(false);
-  setIsClearing(false);
-};
+  // Play audio when processing starts
+  useEffect(() => {
+    if (isProcessing && selectedFile && audioRef.current) {
+      const newAudioUrl = URL.createObjectURL(selectedFile);
+      setAudioUrl(newAudioUrl);
+      audioRef.current.src = newAudioUrl;
+      audioRef.current.play().catch(err => {
+        console.error('Error playing audio:', err);
+        setError('Failed to play audio file');
+      });
+    }
+  }, [isProcessing, selectedFile]);
 
-
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
+  const handleClear = () => {
+    setIsClearing(true);
+    setProductData([]);
+    setSelectedFile(null);
     setError('');
+    setIsProcessing(false);
+    if (audioUrl) {
+      URL.revokeObjectURL(audioUrl);
+      setAudioUrl(null);
+    }
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.src = '';
+    }
+    setIsClearing(false);
   };
 
-  const matchProductWithAI = async (productName) => {
-    try {
-      const response = await fetch('http://localhost:4000/api/match-product', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ productName }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch data from the server');
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setSelectedFile(file);
+      setError('');
+      
+      // Clean up previous audio URL
+      if (audioUrl) {
+        URL.revokeObjectURL(audioUrl);
+        setAudioUrl(null);
       }
-
-      const result = await response.json();
-      return result;
-    } catch (error) {
-      console.error('Error matching product:', error);
-      return null;
     }
   };
 
-  // Update the handleUpload function with this modified version:
-const handleUpload = async () => {
-  if (!selectedFile) {
-    setError('Please select an audio file to upload.');
-    return;
-  }
-
-  const formData = new FormData();
-  formData.append('audioFile', selectedFile);
-
-  try {
-    setIsUploading(true);
-    setError('');
-    setShowSpinner(true);
-    setUploadProgress(0);
-
-    // Simulated upload progress
-    const progressInterval = setInterval(() => {
-      setUploadProgress(prev => {
-        if (prev >= 90) {
-          clearInterval(progressInterval);
-          return 90;
-        }
-        return prev + 10;
-      });
-    }, 500);
-
-    await axios.post('http://localhost:4000/transcribe', formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-      onUploadProgress: (progressEvent) => {
-        const percentCompleted = Math.round(
-          (progressEvent.loaded * 100) / progressEvent.total
-        );
-        setUploadProgress(Math.min(90, percentCompleted));
-      },
-    });
-
-    setFetchTrigger(true);
+  const updateProductWithPrice = (product) => {
+    // Find matching product from productList
+    const matchedProduct = productList.find(p => 
+      p.name.toLowerCase() === product.name.toLowerCase()
+    );
     
-    // Start processing progress
-    const processingInterval = setInterval(() => {
-      setUploadProgress(prev => {
-        if (prev >= 99) {
-          clearInterval(processingInterval);
-          setShowSpinner(false); // Hide spinner at 99%
-          return 99;
-        }
-        return prev + 1;
-      });
-    }, 200);
-
-    // Cleanup when processing is complete
-    const cleanup = () => {
-      clearInterval(progressInterval);
-      clearInterval(processingInterval);
-      setShowSpinner(false);
-      setUploadProgress(0);
+    if (matchedProduct) {
+      return {
+        ...product,
+        price: matchedProduct.price,
+        subtotal: matchedProduct.price * product.qty
+      };
+    }
+    
+    return {
+      ...product,
+      price: 0,
+      subtotal: 0
     };
+  };
 
-    // Wait for processing to complete
-    const checkProcessing = setInterval(() => {
-      if (isProcessing) {
-        cleanup();
-        clearInterval(checkProcessing);
+  const handleUpload = async () => {
+    if (!selectedFile) {
+      setError('Please select an audio file to upload.');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('audioFile', selectedFile);
+
+    try {
+      setIsUploading(true);
+      setError('');
+
+      const response = await axios.post('http://localhost:4000/transcribe', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+
+      if (response.data.products) {
+        // Update products with prices
+        const productsWithPrices = response.data.products.map(updateProductWithPrice);
+        setProductData(productsWithPrices);
+        setIsProcessing(true);
       }
-    }, 100);
-
-  } catch (error) {
-    console.error('Error uploading file:', error);
-    setError('An error occurred while processing the audio file.');
-    setShowSpinner(false);
-    setUploadProgress(0);
-  } finally {
-    setIsUploading(false);
-  }
-};
+    } catch (error) {
+      console.error('Error uploading file:', error);
+      setError('An error occurred while processing the audio file.');
+    } finally {
+      setIsUploading(false);
+    }
+  };
 
   const handleEdit = (index) => {
     setEditingRow(index);
-    setEditedData(productData[index]);
+    setEditedData({
+      ...productData[index],
+      quantity: productData[index].qty
+    });
   };
 
   const handleSave = (index) => {
-    const updatedProducts = [...productData];
-    const matchedProduct = productList.find(p => p.name === editedData.name);
-    
-    updatedProducts[index] = {
+    const updatedProduct = {
+      ...productData[index],
       ...editedData,
-      price: matchedProduct?.price || editedData.price || 0,
-      subtotal: (matchedProduct?.price || editedData.price || 0) * editedData.quantity
+      qty: editedData.quantity,
     };
+    
+    // Update price and subtotal
+    const finalProduct = updateProductWithPrice(updatedProduct);
+    
+    const updatedProducts = [...productData];
+    updatedProducts[index] = finalProduct;
     
     setProductData(updatedProducts);
     setEditingRow(null);
@@ -171,103 +163,42 @@ const handleUpload = async () => {
     if (type === 'number') {
       processedValue = parseFloat(value) || 0;
     }
-    setEditedData(prev => ({
-      ...prev,
-      [field]: processedValue,
-      ...(field === 'quantity' && {
-        subtotal: (prev.price || 0) * processedValue
-      })
-    }));
-  };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:4000/transcriptions');
-  
-        if (response.data.products) {
-          const matchedProducts = [];
-          const uniqueProducts = new Map();
-          
-          for (const product of response.data.products) {
-            const matchedProduct = await matchProductWithAI(product.name);
-            const matchedPriceProduct = productList.find(p => p.name === matchedProduct.name);
-  
-            if (matchedPriceProduct) {
-              const existingProduct = uniqueProducts.get(matchedPriceProduct.name);
-              
-              if (existingProduct) {
-                // Update quantity and subtotal for existing product
-                existingProduct.quantity += product.quantity;
-                existingProduct.subtotal = existingProduct.quantity * matchedPriceProduct.price;
-              } else {
-                // Add new product to map
-                uniqueProducts.set(matchedPriceProduct.name, {
-                  ...product,
-                  name: matchedPriceProduct.name,
-                  price: matchedPriceProduct.price,
-                  subtotal: matchedPriceProduct.price * product.quantity,
-                });
-              }
-            } else {
-              const existingProduct = uniqueProducts.get(product.name);
-              
-              if (existingProduct) {
-                existingProduct.quantity += product.quantity;
-                existingProduct.subtotal = existingProduct.quantity * (existingProduct.price || 0);
-              } else {
-                uniqueProducts.set(product.name, product);
-              }
-            }
-          }
-  
-          // Combine with existing products if any
-          const existingProductMap = new Map(
-            productData.map(product => [product.name, product])
-          );
-  
-          // Merge new products with existing ones
-          uniqueProducts.forEach((product, name) => {
-            if (existingProductMap.has(name)) {
-              const existing = existingProductMap.get(name);
-              existingProductMap.set(name, {
-                ...existing,
-                quantity: existing.quantity + product.quantity,
-                subtotal: (existing.quantity + product.quantity) * (existing.price || 0)
-              });
-            } else {
-              existingProductMap.set(name, product);
-            }
-          });
-  
-          setProductData(Array.from(existingProductMap.values()));
-          setIsProcessing(true);
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        setError('An error occurred while fetching product data.');
-      }
+    
+    const updatedData = {
+      ...editedData,
+      [field]: processedValue
     };
-  
-    if (fetchTrigger) {
-      fetchData();
-      setFetchTrigger(false);
+
+    // Update quantity and subtotal if needed
+    if (field === 'quantity') {
+      updatedData.qty = processedValue;
+      const matchedProduct = productList.find(p => 
+        p.name.toLowerCase() === editedData.name.toLowerCase()
+      );
+      if (matchedProduct) {
+        updatedData.subtotal = matchedProduct.price * processedValue;
+      }
     }
-  }, [fetchTrigger, productData]);
+
+    setEditedData(updatedData);
+  };
 
   const createOrder = async () => {
     try {
       const response = await axios.post('http://localhost:4000/api/orders', {
-        orderDate: new Date().toISOString(),
-        status: 'pending',
-        products: productData,
+        products: productData.map(product => ({
+          name: product.name,
+          quantity: product.qty,
+          price: product.price,
+          subtotal: product.subtotal
+        }))
       });
 
       if (response.data) {
         setError('');
         alert('Order created successfully!');
         setShowConfirmDialog(false);
-
+        handleClear();
       }
     } catch (error) {
       console.error('Error creating order:', error);
@@ -275,44 +206,50 @@ const handleUpload = async () => {
     }
   };
 
+  const calculateTotal = () => {
+    return productData.reduce((total, product) => total + (product.subtotal || 0), 0);
+  };
+
   return (
     <div className="container">
       <h1 className="title">Audio to Product Data</h1>
-      <div className="upload-section">
-  <div className="file-upload">
-    <input
-      type="file"
-      accept="audio/*"
-      onChange={handleFileChange}
-      className="file-input"
-    />
-    <div className="button-group">
-      <button
-        onClick={handleUpload}
-        disabled={isUploading || !selectedFile}
-        className="upload-button"
-      >
-        {isUploading ? 'processing...' : 'process'}
-      </button>
-      <button
-        onClick={handleClear}
-        disabled={isClearing || (!productData.length && !selectedFile)}
-        className="clear-button"
-      >
-        Clear All
-      </button>
-    </div>
-  </div>
+      <audio ref={audioRef} className="hidden" controls />
 
-  <div className="recorder-section">
-    <AudioRecorder 
-      onRecordingComplete={(audioFile) => {
-        setSelectedFile(audioFile);
-        setError('');
-      }} 
-    />
-  </div>
-</div>
+      <div className="upload-section">
+        <div className="file-upload">
+          <input
+            type="file"
+            accept="audio/*"
+            onChange={handleFileChange}
+            className="file-input"
+          />
+          <div className="button-group">
+            <button
+              onClick={handleUpload}
+              disabled={isUploading || !selectedFile}
+              className="upload-button"
+            >
+              {isUploading ? 'Processing...' : 'Process'}
+            </button>
+            <button
+              onClick={handleClear}
+              disabled={isClearing || (!productData.length && !selectedFile)}
+              className="clear-button"
+            >
+              Clear All
+            </button>
+          </div>
+        </div>
+
+        <div className="recorder-section">
+          <AudioRecorder 
+            onRecordingComplete={(audioFile) => {
+              setSelectedFile(audioFile);
+              setError('');
+            }} 
+          />
+        </div>
+      </div>
 
       {error && <p className="error-message">{error}</p>}
 
@@ -322,17 +259,33 @@ const handleUpload = async () => {
             <table className="product-table">
               <thead>
                 <tr>
+                  <th>Human Voice</th>
                   <th>Product Name</th>
                   <th>Unit</th>
                   <th>Quantity</th>
                   <th>Price</th>
-                  <th>SubTotal</th>
+                  <th>Subtotal</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {productData.map((product, index) => (
                   <tr key={index}>
+                    <td>
+                      {editingRow === index ? (
+                        <input
+                          type="text"
+                          value={editedData.name || ''}
+                          onChange={(e) => handleChange('name', e.target.value)}
+                          className="edit-input"
+                        />
+                      ) : (
+                        (() => {
+                          const match = product.ainame.match(/\d+\.\s*(.+)/); // Inline function
+                          return <span>{match ? match[1].toUpperCase() : "No name found"}</span>; // Extract and return the name wrapped in a <span>
+                        })()
+                      )}
+                    </td>
                     <td>
                       {editingRow === index ? (
                         <input
@@ -366,14 +319,11 @@ const handleUpload = async () => {
                           className="edit-input"
                         />
                       ) : (
-                        product.quantity
+                        product.qty
                       )}
                     </td>
-                    <td>
-                    
-                        {product.price || 0}
-                    </td>
-                    <td>{editingRow === index ? editedData.subtotal || 0 : product.subtotal || 0}</td>
+                    <td>₹{product.price || 0}</td>
+                    <td>₹{product.subtotal || 0}</td>
                     <td className="action-buttons">
                       {editingRow === index ? (
                         <>
@@ -398,10 +348,8 @@ const handleUpload = async () => {
                   </tr>
                 ))}
                 <tr>
-                  <td colSpan="4" className="font-bold text-right">Total</td>
-                  <td className="font-bold">
-                    {productData.reduce((total, product) => total + (product.subtotal || 0), 0)}
-                  </td>
+                  <td colSpan="5" className="font-bold text-right">Total</td>
+                  <td className="font-bold">₹{calculateTotal()}</td>
                   <td></td>
                 </tr>
               </tbody>
@@ -412,46 +360,46 @@ const handleUpload = async () => {
             </p>
           )}
         </div>
-        {showSpinner && <LoadingSpinner percentage={uploadProgress} />}
 
-        <div className="text-right mt-4">
-        <button 
-          onClick={() => setShowConfirmDialog(true)} 
-          className="order-button"
-        >
-          Order
-        </button>
-      </div>
+        {productData.length > 0 && (
+          <div className="text-right mt-4">
+            <button 
+              onClick={() => setShowConfirmDialog(true)} 
+              className="order-button"
+            >
+              Order
+            </button>
+          </div>
+        )}
 
-      {/* Confirmation Dialog */}
-      {showConfirmDialog && (
-        <div className="popup-overlay">
-          <div className="popup-content">
-            <h3 className="popup-title">Confirm Order</h3>
-            <p className="popup-message">
-              Are you sure you want to create this order?
-              <br />
-              <span className="popup-total">
-                Total Amount: {productData.reduce((total, product) => total + (product.subtotal || 0), 0)}
-              </span>
-            </p>
-            <div className="popup-buttons">
-              <button 
-                onClick={() => setShowConfirmDialog(false)} 
-                className="popup-button cancel"
-              >
-                Cancel
-              </button>
-              <button 
-                onClick={createOrder} 
-                className="popup-button confirm"
-              >
-                Confirm Order
-              </button>
+        {showConfirmDialog && (
+          <div className="popup-overlay">
+            <div className="popup-content">
+              <h3 className="popup-title">Confirm Order</h3>
+              <p className="popup-message">
+                Are you sure you want to create this order?
+                <br />
+                <span className="popup-total">
+                  Total Amount: ₹{calculateTotal()}
+                </span>
+              </p>
+              <div className="popup-buttons">
+                <button 
+                  onClick={() => setShowConfirmDialog(false)} 
+                  className="popup-button cancel"
+                >
+                  Cancel
+                </button>
+                <button 
+                  onClick={createOrder} 
+                  className="popup-button confirm"
+                >
+                  Confirm Order
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
       </div>
 
       <style jsx>{`

@@ -6,11 +6,19 @@ const transcriptionSchema = new mongoose.Schema({
     required: true,
   },
   products: [{
+    id: {
+      type: Number,
+      required: true, // The ID of the
+    },
+    ainame: {
+      type: String,
+      required: true, // The name of the product as spoken by the customer
+    },
     name: {
       type: String,
       required: true, // The name of the product
     },
-    quantity: {
+    qty: {
       type: Number,
       required: true, // The quantity of the product
     },
